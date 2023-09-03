@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const RADIUS = 600;
+const RADIUS = 400;
 const ITEM_SHIFT = 100;
 
 const VerticalCarousel = ({ imageData }) => {
@@ -44,7 +44,12 @@ const VerticalCarousel = ({ imageData }) => {
     const updateFrame = () => {
       rotateAngle += mouseY;
       viewAngle += (mouseX - viewAngle) * 0.05;
+      // console.log('mouseX', mouseX);
+      // console.log('mouseY', mouseY);
+      // console.log('rotateAngle', rotateAngle);
+      // console.log('viewAngle', viewAngle);
       gallery.style.transform = `translateZ(-1500px) rotateY(${-viewAngle}deg) rotateX(${rotateAngle}deg)`;
+      // gallery.style.transform = `translateZ(-1500px) rotateY(${-viewAngle}deg) rotateX(210deg)`;
       animId.current = requestAnimationFrame(updateFrame);
     };
     updateFrame();
@@ -64,30 +69,31 @@ const VerticalCarousel = ({ imageData }) => {
   };
 
   return (
-    <div className="container my-4">
-      <div
-        className="vertical-carousel absolute top-1/2 left-1/2 origin-center cursor-pointer"
-        // className="vertical-carousel"
-        ref={el}
-      >
-        {imageData.map((it, index) => (
-          <div
-            onClick={() => pickImage(it)}
-            key={index}
-            style={{ backgroundImage: `url(${it})` }}
-            className="absolute -top-[150px] -left-[150px] rounded-3xl origin-center w-[700px] h-[500px] bg-black bg-no-repeat bg-center bg-cover transition-all ease-out duration-500"
-            // className="vertical-carousel-item"
-          ></div>
-        ))}
+    <>
+      <div className="relative overflow-hidden mx-auto my-4 w-full h-[800px] perspective">
+        <div
+          className="vertical-carousel absolute top-1/2 left-4 origin-center cursor-pointer"
+          // className="vertical-carousel"
+          ref={el}
+        >
+          {imageData.map((url, index) => (
+            <div
+              onClick={() => pickImage(url)}
+              key={index}
+              style={{ backgroundImage: `url(${url})` }}
+              className={`absolute -top-[150px] -left-[150px] rounded-3xl origin-center w-[60vw] aspect-video bg-black bg-no-repeat bg-center bg-cover transition-all ease-out duration-500`}
+            ></div>
+          ))}
+        </div>
       </div>
       <div
         onClick={() => {
           img.current.style.transform = 'scale(0.0, 0.0)';
         }}
-        className="image-display"
+        className="absolute cursor-pointer w-[800px] h-[400px] top-[62%] left-[62%] -mt-[300px] -ml-[500px] rounded bg-no-repeat bg-center bg-cover transition-all ease-out duration-500 scale-0 bg-black"
         ref={img}
       ></div>
-    </div>
+    </>
   );
 };
 
