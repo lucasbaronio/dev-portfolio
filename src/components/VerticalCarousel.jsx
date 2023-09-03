@@ -42,14 +42,15 @@ const VerticalCarousel = ({ imageData }) => {
     // Rotate and animate the gallery
     cancelAnimationFrame(animId.current);
     const updateFrame = () => {
-      rotateAngle += mouseY;
+      if (mouseX > 0) {
+        if (mouseY > 0.1 || mouseY < -0.1) {
+          rotateAngle += mouseY;
+        }
+      } else {
+        rotateAngle += 0.3;
+      }
       viewAngle += (mouseX - viewAngle) * 0.05;
-      // console.log('mouseX', mouseX);
-      // console.log('mouseY', mouseY);
-      // console.log('rotateAngle', rotateAngle);
-      // console.log('viewAngle', viewAngle);
       gallery.style.transform = `translateZ(-1500px) rotateY(${-viewAngle}deg) rotateX(${rotateAngle}deg)`;
-      // gallery.style.transform = `translateZ(-1500px) rotateY(${-viewAngle}deg) rotateX(210deg)`;
       animId.current = requestAnimationFrame(updateFrame);
     };
     updateFrame();
@@ -73,7 +74,6 @@ const VerticalCarousel = ({ imageData }) => {
       <div className="relative overflow-hidden mx-auto my-4 w-full h-[800px] perspective">
         <div
           className="vertical-carousel absolute top-1/2 left-4 origin-center cursor-pointer"
-          // className="vertical-carousel"
           ref={el}
         >
           {imageData.map((url, index) => (
@@ -81,7 +81,7 @@ const VerticalCarousel = ({ imageData }) => {
               onClick={() => pickImage(url)}
               key={index}
               style={{ backgroundImage: `url(${url})` }}
-              className={`absolute -top-[150px] -left-[150px] rounded-3xl origin-center w-[60vw] aspect-video bg-black bg-no-repeat bg-center bg-cover transition-all ease-out duration-500`}
+              className={`absolute -top-[150px] -left-[150px] rounded-3xl origin-center w-[60vw] h-[50vh] bg-transparent bg-no-repeat bg-center bg-contain transition-all ease-out duration-500`}
             ></div>
           ))}
         </div>
@@ -90,7 +90,7 @@ const VerticalCarousel = ({ imageData }) => {
         onClick={() => {
           img.current.style.transform = 'scale(0.0, 0.0)';
         }}
-        className="absolute cursor-pointer w-[800px] h-[400px] top-[62%] left-[62%] -mt-[300px] -ml-[500px] rounded bg-no-repeat bg-center bg-cover transition-all ease-out duration-500 scale-0 bg-black"
+        className="absolute cursor-pointer w-[50vw] h-[30vh] top-[62%] left-[60%] -mt-[300px] -ml-[500px] rounded bg-no-repeat bg-center bg-contain transition-all ease-out duration-500 scale-0 "
         ref={img}
       ></div>
     </>

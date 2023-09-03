@@ -16,7 +16,7 @@ const Hello = () => {
         <div className="flex basis-96 flex-1 justify-center h-full w-full">
           <VerticalCarousel
             imageData={[
-              new URL('/ray-so-export.png', import.meta.url).href,
+              new URL('/paste-text.png', import.meta.url).href,
               new URL('/copy-images.png', import.meta.url).href,
               new URL('/copy-text.png', import.meta.url).href,
             ]}
