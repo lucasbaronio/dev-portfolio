@@ -7,9 +7,11 @@ import {
   VscDebugAlt,
   VscChevronDown,
 } from 'react-icons/vsc';
-import { RiFolder3Fill } from 'react-icons/ri';
+import Folder from './components/Folder';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
+  const navigate = useNavigate();
   return (
     <aside className="max-w-xs lg:w-[300px] h-full border-r border-slate-800">
       <div className="flex flex-col h-full">
@@ -30,10 +32,15 @@ const SideBar = () => {
               <VscChevronDown color="white" />
               <span>personal-info</span>
             </div>
-            <div className="flex items-center gap-2 pl-2 h-10 cursor-pointer">
-              <VscChevronDown color="white" />
-              <RiFolder3Fill color="red" />
-              <span>bio</span>
+            <div className="mt-2">
+              <Folder
+                name="bio"
+                files={[
+                  { type: 'folder', name: 'carpeta' },
+                  { type: 'file', name: 'pepe', onClick: () => navigate() },
+                  { type: 'file', name: 'coco' },
+                ]}
+              />
             </div>
           </div>
         </div>
