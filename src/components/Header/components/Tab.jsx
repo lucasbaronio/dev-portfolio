@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tab = ({ value, name, selected, left = true, onClick }) => {
+const Tab = ({ value, name, selected, left = true, onClick, extraClass }) => {
   return (
     <button
       onClick={() => onClick(name)}
@@ -9,7 +9,7 @@ const Tab = ({ value, name, selected, left = true, onClick }) => {
         left ? 'border-r' : 'border-l'
       } border-slate-800 hover:bg-slate-900 ${
         selected ? 'border-t-2 border-t-blue-300' : ''
-      } cursor-pointer`}
+      } cursor-pointer ${extraClass}`}
     >
       <span>{value}</span>
     </button>
@@ -22,6 +22,7 @@ Tab.propTypes = {
   selected: PropTypes.bool,
   left: PropTypes.bool,
   onClick: PropTypes.func,
+  extraClass: PropTypes.string,
 };
 
 export default Tab;

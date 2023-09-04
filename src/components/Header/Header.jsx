@@ -41,6 +41,7 @@ const Header = () => {
             value={TABS.HELLO.value}
             selected={tabSelected === TABS.HELLO.name}
             onClick={onClickTab}
+            extraClass="rounded-ss-lg"
           />
           <Tab
             name={TABS.ABOUT.name}
