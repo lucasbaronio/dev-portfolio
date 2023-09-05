@@ -10,7 +10,12 @@ const Hello = () => {
           <div className="flex flex-col my-5">
             <h4 className=" text-lg">Hi all. I am</h4>
             <h1 className=" text-6xl text-white font-thin my-2">Lucas Baronio</h1>
-            <h2 className=" text-2xl text-blue-700">$ Software Engineer Fullstack</h2>
+            <pre className=" flex text-2xl text-blue-700">
+              ${' '}
+              <h2 className=" animate-typing overflow-hidden border-r-2 border-r-orange-500 whitespace-nowrap pr-1">
+                Software Engineer Fullstack
+              </h2>
+            </pre>
           </div>
         </div>
         <div className="flex basis-96 flex-1 justify-center h-full w-full">
