@@ -1,9 +1,8 @@
 import { Outlet, useMatch } from 'react-router-dom';
 import SideBar from './components/SideBar';
 import Header from './components/Header';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
-import XIcon from './assets/x.svg';
 import { useEffect, useState } from 'react';
+import Footer from './components/Footer/Footer';
 
 function RootLayout() {
   const [isLanding, setIsLanding] = useState(false);
@@ -18,45 +17,16 @@ function RootLayout() {
   return (
     <div className=" bg-black box-border p-1 flex w-screen h-screen max-w-full max-h-full font-mono">
       <main className=" flex flex-col w-full h-full rounded-xl border border-slate-800 dark:bg-slate-950	dark:text-slate-400">
-        <div className="flex w-full h-full">
+        <div className="flex w-full h-[calc(100%_-_4rem)]">
           {!isLanding ? <SideBar /> : null}
-
-          <section className="flex flex-col w-full h-full">
+          <section className="flex flex-col w-[calc(100%_-_250px)] h-full">
             <Header />
-            <div className="w-full h-full">
+            <div className="w-full h-full overflow-auto">
               <Outlet />
             </div>
           </section>
         </div>
-        <footer className=" flex justify-between h-10 w-full border-t border-slate-800">
-          <div className="flex">
-            <div className=" flex items-center h-full px-4 border-r border-r-slate-800">
-              <span className=" text-sm">find me in:</span>
-            </div>
-            <div className=" flex items-center h-full px-4 border-r border-r-slate-800">
-              <img src={XIcon} width={20} className=" fill-slate-600" />
-            </div>
-            <a
-              href="https://www.linkedin.com/in/lucas-baronio-726739b9"
-              target="_blank"
-              className=" flex items-center h-full px-4 border-r border-r-slate-800"
-              rel="noreferrer"
-            >
-              <BsLinkedin size={20} />
-            </a>
-          </div>
-          <div className="flex">
-            <a
-              href="https://github.com/lucasbaronio"
-              target="_blank"
-              className="flex items-center gap-2 h-full px-4 border-l border-l-slate-800"
-              rel="noreferrer"
-            >
-              <span className=" text-sm">@lucasbaronio</span>
-              <BsGithub size={20} />
-            </a>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );
