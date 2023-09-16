@@ -5,15 +5,16 @@ import {
   VscSearch,
   VscSourceControl,
   VscDebugAlt,
-  VscChevronDown,
   VscAccount,
   VscGear,
 } from 'react-icons/vsc';
-import Folder from './components/Folder';
-import { useNavigate } from 'react-router-dom';
+import AboutSideBar from '../../pages/About/components/AboutSideBar';
+import { TABS } from '../../constants/tabs';
+import { useTabSelected } from '../../hooks/tabSelected';
 
 const SideBar = () => {
-  const navigate = useNavigate();
+  const tabSelected = useTabSelected();
+
   return (
     <aside className=" min-w-[250px] h-full border-r border-slate-800">
       <div className="flex flex-col w-full h-full">
@@ -40,20 +41,7 @@ const SideBar = () => {
             </div>
           </aside>
           <div className="flex flex-col h-full w-full">
-            <div className="flex items-center gap-1 pl-2 h-10 border-b border-slate-800 cursor-pointer">
-              <VscChevronDown color="white" />
-              <span>personal-info</span>
-            </div>
-            <div className="mt-2">
-              <Folder
-                name="bio"
-                files={[
-                  { type: 'folder', name: 'carpeta' },
-                  { type: 'file', name: 'pepe', onClick: () => navigate() },
-                  { type: 'file', name: 'coco' },
-                ]}
-              />
-            </div>
+            {tabSelected === TABS.ABOUT.name ? <AboutSideBar /> : null}
           </div>
         </div>
       </div>

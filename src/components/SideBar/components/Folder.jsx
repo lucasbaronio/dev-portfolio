@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
 import { RiFolder3Fill } from 'react-icons/ri';
-import File from './File';
+import Directory from './Directory';
 
-const Folder = ({ name, files }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Folder = ({ name, files, open = false }) => {
+  const [isOpen, setIsOpen] = useState(open);
   return (
     <div className="flex flex-col pl-2">
       <button
@@ -16,12 +16,7 @@ const Folder = ({ name, files }) => {
         <RiFolder3Fill color="red" />
         <span>{name}</span>
       </button>
-      {isOpen && files?.length > 0
-        ? files.map(({ type, name, ...rest }) => {
-            if (type === 'file') return <File key={name} name={name} {...rest} />;
-            if (type === 'folder') return <Folder key={name} name={name} {...rest} />;
-          })
-        : null}
+      {isOpen ? <Directory files={files} /> : null}
     </div>
   );
 };
@@ -29,6 +24,7 @@ const Folder = ({ name, files }) => {
 Folder.propTypes = {
   name: PropTypes.string.isRequired,
   files: PropTypes.array,
+  open: PropTypes.bool,
 };
 
 export default Folder;

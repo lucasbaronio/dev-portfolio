@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import XIcon from '../../assets/x.svg';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import { BiCoffeeTogo } from 'react-icons/bi';
 import {
   VscCheckAll,
   VscBell,
@@ -59,6 +60,11 @@ const Footer = () => {
           >
             <BsLinkedin size={20} />
           </a>
+        </div>
+        <div className="flex items-center gap-2">
+          <span>Made with</span>
+          <BiCoffeeTogo size={20} className=" fill-cyan-300" />
+          <span>& 🩵</span>
         </div>
         <div className="flex">
           <a

@@ -1,36 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { VscChromeClose } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
 import Tab from './components/Tab';
-
-const TABS = {
-  HELLO: {
-    name: 'hello',
-    value: '_hello',
-  },
-  ABOUT: {
-    name: 'about',
-    value: '_about-me',
-  },
-  PROJECTS: {
-    name: 'projects',
-    value: '_projects',
-  },
-  CONTACT: {
-    name: 'contact',
-    value: '_contact-me',
-  },
-};
+import { TABS } from '../../constants/tabs';
+import { useTabSelected } from '../../hooks/tabSelected';
 
 const Header = () => {
-  const [tabSelected, setTabSelected] = useState(TABS.HELLO.name);
+  const tabSelected = useTabSelected();
   const navigate = useNavigate();
-
-  const onClickTab = (name) => {
-    setTabSelected(name);
-    navigate(name);
-  };
 
   return (
     <header className="flex flex-col">
@@ -40,20 +18,20 @@ const Header = () => {
             name={TABS.HELLO.name}
             value={TABS.HELLO.value}
             selected={tabSelected === TABS.HELLO.name}
-            onClick={onClickTab}
+            onClick={(name) => navigate(name)}
             extraClass="rounded-ss-lg"
           />
           <Tab
             name={TABS.ABOUT.name}
             value={TABS.ABOUT.value}
             selected={tabSelected === TABS.ABOUT.name}
-            onClick={onClickTab}
+            onClick={(name) => navigate(name)}
           />
           <Tab
             name={TABS.PROJECTS.name}
             value={TABS.PROJECTS.value}
             selected={tabSelected === TABS.PROJECTS.name}
-            onClick={onClickTab}
+            onClick={(name) => navigate(name)}
           />
         </div>
         <div className="flex">
@@ -61,8 +39,9 @@ const Header = () => {
             name={TABS.CONTACT.name}
             value={TABS.CONTACT.value}
             selected={tabSelected === TABS.CONTACT.name}
-            onClick={onClickTab}
+            onClick={(name) => navigate(name)}
             left={false}
+            extraClass="rounded-se-lg"
           />
         </div>
       </div>

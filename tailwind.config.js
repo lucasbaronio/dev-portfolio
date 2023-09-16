@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'media',
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       keyframes: {
@@ -23,11 +28,27 @@ export default {
             borderColor: 'orange',
           },
         },
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
+        fadeIn: {
+          '0%': { opacity: '0%' },
+          '100%': { opacity: '100%' },
+        },
       },
       animation: {
         typing: 'typing 3.5s steps(50), blink .75s step-end infinite',
+        text: 'text 5s ease infinite',
+        fadein: 'fadeIn .5s ease-in-out',
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
