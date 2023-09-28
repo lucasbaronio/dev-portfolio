@@ -1,4 +1,3 @@
-import { SiNotion } from 'react-icons/si';
 import Jenkins from '../../assets/jenkins.png';
 import Slack from '../../assets/slack.png';
 import Jira from '../../assets/jira.png';
@@ -474,12 +473,6 @@ export const TOOLS = {
     component: ({ className }) => <img src={Jira} className={className} />,
     colors: {
       text: 'text-[#2684ff]',
-    },
-  },
-  notion: {
-    component: ({ className }) => <SiNotion size={64} className="dark:fill-white fill-black" />,
-    colors: {
-      text: 'dark:text-white text-black',
     },
   },
   figma: {
