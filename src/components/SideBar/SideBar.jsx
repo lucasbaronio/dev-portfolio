@@ -12,43 +12,71 @@ import AboutSideBar from '../../pages/About/components/AboutSideBar';
 import { TABS } from '../../constants/tabs';
 import { useTabSelected } from '../../hooks/tabSelected';
 
-const SideBar = () => {
+const Icon = ({ icon: Component, selected, onClick }) => {
+  return (
+    <div
+      className={` flex justify-center w-full py-3 my-1 cursor-pointer group ${
+        selected && ' border-l-2 border-l-blue-300'
+      }`}
+      onClick={onClick}
+    >
+      <Component
+        size={24}
+        color="grey"
+        className={`group-hover:fill-white ${selected && 'fill-white'}`}
+      />
+    </div>
+  );
+};
+
+Icon.propTypes = {
+  icon: PropTypes.any,
+  selected: PropTypes.bool,
+  onClick: PropTypes.func,
+};
+
+const SideBar = ({ onTabClick }) => {
   const tabSelected = useTabSelected();
 
   return (
-    <aside className=" min-w-[250px] h-full border-r border-slate-800">
-      <div className="flex flex-col w-full h-full">
-        <div>
-          <div className="flex items-center h-14 border-b border-slate-800">
-            <span className="pl-4">Lucas Baronio</span>
-          </div>
+    <aside className="flex h-full w-full">
+      <aside className="flex flex-col justify-between w-16 h-full border-r border-slate-800">
+        <div className="flex flex-col items-center">
+          <Icon
+            icon={VscFiles}
+            selected={tabSelected === TABS.HELLO.name}
+            onClick={() => onTabClick(TABS.HELLO.name)}
+          />
+          <Icon
+            icon={VscSearch}
+            selected={tabSelected === TABS.CONTACT.name}
+            onClick={() => onTabClick(TABS.CONTACT.name)}
+          />
+          <Icon
+            icon={VscSourceControl}
+            selected={tabSelected === TABS.PROJECTS.name}
+            onClick={() => onTabClick(TABS.PROJECTS.name)}
+          />
+          <Icon icon={VscDebugAlt} selected={tabSelected === ''} onClick={() => {}} />
         </div>
-        <div className="flex h-full w-full">
-          <aside className="flex flex-col justify-between w-16 h-full border-r border-slate-800 py-4">
-            <div className="flex flex-col items-center gap-6">
-              <VscFiles size={24} color="grey" className=" hover:fill-white cursor-pointer" />
-              <VscSearch size={24} color="grey" className=" hover:fill-white cursor-pointer" />
-              <VscSourceControl
-                size={24}
-                color="grey"
-                className=" hover:fill-white cursor-pointer"
-              />
-              <VscDebugAlt size={24} color="grey" className=" hover:fill-white cursor-pointer" />
-            </div>
-            <div className="flex flex-col items-center gap-6">
-              <VscAccount size={24} color="grey" className=" hover:fill-white cursor-pointer" />
-              <VscGear size={24} color="grey" className=" hover:fill-white cursor-pointer" />
-            </div>
-          </aside>
-          <div className="flex flex-col h-full w-full">
-            {tabSelected === TABS.ABOUT.name ? <AboutSideBar /> : null}
-          </div>
+        <div className="flex flex-col items-center">
+          <Icon
+            icon={VscAccount}
+            selected={tabSelected === TABS.ABOUT.name}
+            onClick={() => onTabClick(TABS.ABOUT.name)}
+          />
+          <Icon icon={VscGear} selected={tabSelected === ''} onClick={() => {}} />
         </div>
+      </aside>
+      <div className="flex flex-col h-full w-full">
+        {tabSelected === TABS.ABOUT.name ? <AboutSideBar /> : null}
       </div>
     </aside>
   );
 };
 
-SideBar.propTypes = {};
+SideBar.propTypes = {
+  onTabClick: PropTypes.func,
+};
 
 export default SideBar;
