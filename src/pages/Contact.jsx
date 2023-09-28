@@ -106,8 +106,8 @@ button.addEventListener('click', () => {
   };
 
   return (
-    <section className="flex h-full">
-      <div className="flex flex-1 items-center justify-center w-1/2 border-r border-r-slate-800">
+    <section className="flex flex-col lg:flex-row h-full">
+      <div className="flex flex-1 items-center justify-center lg:w-1/2 lg:border-r border-r-slate-800">
         <form
           className="w-full py-4 px-4 mx-auto max-w-lg lg:py-8"
           onSubmit={handleSubmit(onSubmit)}
@@ -146,7 +146,7 @@ button.addEventListener('click', () => {
           </Button>
         </form>
       </div>
-      <div className="flex w-1/2 px-2">
+      <div className="flex lg:w-1/2 px-2 border-t lg:border-none border-t-slate-800">
         <div className="flex gap-6 w-full text-sm">
           <SyntaxHighlighter
             language="javascript"
