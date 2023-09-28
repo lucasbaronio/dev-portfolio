@@ -19,14 +19,18 @@ const Hello = () => {
             </pre>
           </div>
         </div>
-        <div className="flex basis-96 flex-1 justify-center h-full w-full">
-          <VerticalCarousel
+        <div className=" flex basis-96 flex-1 items-center justify-center h-full w-full">
+          <iframe
+            className="w-[700px] md:w-[400px] lg:w-[700px] h-full lg:h-[700px]"
+            src="https://snake-game-three-mu.vercel.app/"
+          />
+          {/* <VerticalCarousel
             imageData={[
               new URL('/paste-text.png', import.meta.url).href,
               new URL('/copy-images.png', import.meta.url).href,
               new URL('/copy-text.png', import.meta.url).href,
             ]}
-          />
+          /> */}
         </div>
       </div>
     </div>
