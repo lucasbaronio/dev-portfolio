@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
 .perspective {
   perspective: 1000px;
   -webkit-perspective: 1000px;
