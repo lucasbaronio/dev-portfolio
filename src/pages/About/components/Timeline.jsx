@@ -6,7 +6,7 @@ const Timeline = () => {
   return (
     <div>
       <ol className="relative border-l border-gray-200 dark:border-gray-700">
-        <li id="software-engineer" className="mb-10 ml-6">
+        <li id="fullstack" className="mb-10 ml-6">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
             <FaCode className="dark:fill-white fill-black" />
           </span>

@@ -31,8 +31,8 @@ const AboutSideBar = () => {
               files: [
                 {
                   type: 'file',
-                  name: 'software-engineer',
-                  onClick: () => navigate('#software-engineer'),
+                  name: 'fullstack',
+                  onClick: () => navigate('#fullstack'),
                 },
                 {
                   type: 'file',
