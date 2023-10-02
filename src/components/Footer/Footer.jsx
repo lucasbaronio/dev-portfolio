@@ -15,8 +15,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col h-16 w-full border-t border-slate-800">
-      <div className=" flex items-center justify-between h-6 w-full px-1">
+    <footer className=" w-full">
+      <div className=" flex items-center justify-between px-1 h-6">
         <div className="flex gap-3">
           <div className="flex gap-1">
             <VscSourceControl color="grey" />
@@ -31,7 +31,7 @@ const Footer = () => {
             <span className=" text-xs">0</span>
           </div>
         </div>
-        <div className="flex gap-3">
+        <div className="hidden xs:flex gap-3">
           <span className=" text-xs">UTF-8</span>
           <div className="flex gap-1">
             <VscJson color="grey" />
@@ -44,7 +44,7 @@ const Footer = () => {
           <VscBell color="grey" />
         </div>
       </div>
-      <div className="flex justify-between h-10 w-full border-t border-slate-800">
+      <div className="flex justify-between col-span-2 border-t border-slate-800 h-10">
         <div className="flex">
           <div className=" flex items-center h-full px-4 border-r border-r-slate-800">
             <span className=" text-sm">find me in:</span>
@@ -61,7 +61,7 @@ const Footer = () => {
             <BsLinkedin size={20} />
           </a>
         </div>
-        <div className="flex items-center gap-2">
+        <div className=" hidden sm:flex items-center gap-2">
           <span>Made with</span>
           <BiCoffeeTogo size={20} className=" fill-cyan-300" />
           <span>& 🩵</span>
@@ -73,7 +73,7 @@ const Footer = () => {
             className="flex items-center gap-2 h-full px-4 border-l border-l-slate-800"
             rel="noreferrer"
           >
-            <span className=" text-sm">@lucasbaronio</span>
+            <span className=" hidden xs:block text-sm">@lucasbaronio</span>
             <BsGithub size={20} />
           </a>
         </div>
