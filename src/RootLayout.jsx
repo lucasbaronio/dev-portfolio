@@ -50,12 +50,10 @@ function RootLayout() {
           <div className=" hidden md:block border-r border-slate-800">
             <SideBar onTabClick={onTabClick} />
           </div>
-        ) : (
-          ''
-        )}
-        <div className={`${isLanding ? 'md:col-span-2' : ''} overflow-auto`}>
+        ) : null}
+        <article className={`${isLanding ? 'md:col-span-2' : ''} overflow-auto`}>
           <Outlet />
-        </div>
+        </article>
         <div className="col-span-1 md:col-span-2 border-t border-slate-800">
           <Footer />
         </div>

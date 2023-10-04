@@ -51,7 +51,7 @@ button.addEventListener('click', () => {
       inputProps: {
         type: 'text',
         maxLength: 100,
-        placeholder: 'Ej: Juan Perez',
+        // placeholder: 'Ej: Juan Perez',
       },
       reactFormInputOptions: {
         required: 'This field is required',
@@ -112,6 +112,7 @@ button.addEventListener('click', () => {
           className="w-full py-4 px-4 mx-auto max-w-lg lg:py-8"
           onSubmit={handleSubmit(onSubmit)}
         >
+          <h2 className="text-2xl text-white my-6">Let&apos;s Talk!</h2>
           <div className=" flex flex-col gap-4">
             {inputs.map(
               ({ fieldName, divClassName, label, inputProps, reactFormInputOptions, textArea }) => {

@@ -40,7 +40,7 @@ const SideBar = ({ onTabClick }) => {
 
   return (
     <aside className="flex h-full w-full">
-      <aside className="flex flex-col justify-between w-16 h-full border-r border-slate-800">
+      <section className="flex flex-col justify-between w-16 h-full border-r border-slate-800">
         <div className="flex flex-col items-center">
           <Icon
             icon={VscFiles}
@@ -67,7 +67,7 @@ const SideBar = ({ onTabClick }) => {
           />
           <Icon icon={VscGear} selected={tabSelected === ''} onClick={() => {}} />
         </div>
-      </aside>
+      </section>
       <div className="flex flex-col h-full w-full">
         {tabSelected === TABS.ABOUT.name ? <AboutSideBar /> : null}
       </div>
