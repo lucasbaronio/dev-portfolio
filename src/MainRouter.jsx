@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import RootLayout from './RootLayout';
 import Hello from './pages/Hello';
 import About from './pages/About/About';
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Hello />,
+        element: <Navigate to="hello" replace />,
         handle: {
           name: TABS.HELLO.name,
         },
