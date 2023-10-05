@@ -81,7 +81,7 @@ const Projects = () => {
   return (
     <section className="flex flex-col items-center justify-center px-8 xl:px-4 my-10">
       <div className=" flex flex-col items-center w-full max-w-4xl my-8 ">
-        <h3 className=" text-2xl text-blue-300">My projects</h3>
+        <h3 className=" text-2xl text-primary-300">My projects</h3>
         <p className=" my-4">
           During my career as a software developer I have been able to implement some short- to
           long-range projects. Each of these projects has been an opportunity to apply my technical
@@ -108,12 +108,12 @@ const Projects = () => {
               <figure className="hidden md:flex absolute top-[50%] bottom-0 my-auto left-0 w-[25%] h-fit z-10">
                 <img className="aspect-[9/20] object-cover" src={mobileImage} alt={name} />
               </figure>
-              {/* <IconExternalLink className="absolute top-5 right-5 group-hover:scale-125 duration-100 text-white" /> */}
+              {/* <IconExternalLink className="absolute top-5 right-5 group-hover:scale-125 duration-100 text-text-100" /> */}
             </a>
-            <div className="min-w-full h-[70%] hover:bg-gray-100/60 bg-gray-100 dark:bg-[#1D273D] hover:dark:bg-[#1D273D]/60 hover:backdrop-blur-lg md:absolute md:top-[73%] md:hover:top-[30%] pl-2 md:pl-[26%] transform duration-200 py-2 pr-2">
+            <div className="min-w-full h-[70%] hover:bg-bg-700/60 bg-bg-700 dark:bg-bg-300 hover:dark:bg-bg-300/60 hover:backdrop-blur-lg md:absolute md:top-[73%] md:hover:top-[30%] pl-2 md:pl-[26%] transform duration-200 py-2 pr-2">
               <hgroup className="flex flex-col">
-                <h2 className="col-span-1 text-xl font-semibold mb-1">{name}</h2>
-                <p className="text-sm line-clamp-2">{summary}</p>
+                <h2 className="col-span-1 text-xl text-accent-100 font-semibold mb-1">{name}</h2>
+                <p className="text-sm line-clamp-2 text-accent-200 font-semibold">{summary}</p>
                 <p className="line-clamp-10 text-xs mt-4">{description}</p>
               </hgroup>
             </div>
@@ -122,7 +122,7 @@ const Projects = () => {
       </div>
 
       <div className=" flex flex-col items-center w-full max-w-4xl my-8 ">
-        <h3 className=" text-2xl text-blue-300">Github contributions</h3>
+        <h3 className=" text-2xl text-primary-300">Github contributions</h3>
         <p className=" my-4">
           These are some of my contributions on Github on a personal level and working for companies
         </p>

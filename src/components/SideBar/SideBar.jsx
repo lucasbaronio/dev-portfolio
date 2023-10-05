@@ -16,14 +16,14 @@ const Icon = ({ icon: Component, selected, onClick }) => {
   return (
     <div
       className={` flex justify-center w-full py-3 my-1 cursor-pointer group ${
-        selected && ' border-l-2 border-l-blue-300'
+        selected && ' border-l-2 border-l-accent-100'
       }`}
       onClick={onClick}
     >
       <Component
         size={24}
         color="grey"
-        className={`group-hover:fill-white ${selected && 'fill-white'}`}
+        className={`group-hover:fill-accent-100 ${selected && 'fill-text-100'}`}
       />
     </div>
   );
@@ -40,7 +40,7 @@ const SideBar = ({ onTabClick }) => {
 
   return (
     <aside className="flex h-full w-full">
-      <section className="flex flex-col justify-between w-16 h-full border-r border-slate-800">
+      <section className="flex flex-col justify-between w-16 h-full border-r border-bg-200">
         <div className="flex flex-col items-center">
           <Icon
             icon={VscFiles}

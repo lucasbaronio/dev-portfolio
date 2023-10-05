@@ -247,7 +247,7 @@ export const STACKS = {
       </svg>
     ),
     colors: {
-      text: 'dark:text-white text-black',
+      text: 'dark:text-text-100 text-black',
     },
   },
   linux: {
@@ -288,7 +288,7 @@ export const STACKS = {
       </svg>
     ),
     colors: {
-      text: 'dark:text-white text-black',
+      text: 'dark:text-text-100 text-black',
     },
   },
   tailwind: {
@@ -460,7 +460,7 @@ export const TOOLS = {
       </svg>
     ),
     colors: {
-      text: 'dark:text-white text-black',
+      text: 'dark:text-text-100 text-black',
     },
   },
   slack: {

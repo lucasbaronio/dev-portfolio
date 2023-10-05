@@ -23,7 +23,7 @@ const About = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <div id="bio" className=" flex flex-col items-center w-full max-w-4xl my-8 px-8 xl:px-4">
-        <h3 className=" text-2xl text-blue-300">A bit about me</h3>
+        <h3 className=" text-2xl text-primary-300">A bit about me</h3>
         <p className=" my-4">
           Desde muy chico me considero un apasionado por el mundo de la tecnología, en especial...
         </p>
@@ -32,13 +32,13 @@ const About = () => {
         id="experience"
         className=" flex flex-col items-center w-full max-w-4xl my-8 px-8 xl:px-4"
       >
-        <h3 className=" text-2xl text-blue-300">My experience</h3>
+        <h3 className=" text-2xl text-primary-300">My experience</h3>
         <p className=" my-4">pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe </p>
         <Timeline />
       </div>
       <div id="skills" className="my-8 max-w-4xl">
         <section id="tech-stack" className=" flex flex-col items-center my-8 w-full px-8 xl:px-4">
-          <h3 className=" text-2xl text-blue-300">My Tech Stack</h3>
+          <h3 className=" text-2xl text-primary-300">My Tech Stack</h3>
           <p className=" my-4">Technologies I&apos;ve been working with recently</p>
           <div className="flex justify-center gap-8 flex-wrap my-4">
             {Object.entries(STACKS).map(([key, value]) => (
@@ -47,7 +47,7 @@ const About = () => {
           </div>
         </section>
         <section id="tools" className=" flex flex-col items-center my-8 w-full px-8 xl:px-4">
-          <h3 className=" text-2xl text-blue-300">Tools</h3>
+          <h3 className=" text-2xl text-primary-300">Tools</h3>
           <p className=" my-4">Technologies I&apos;ve been working with recently</p>
           <div className="flex justify-center gap-8 flex-wrap my-4">
             {Object.entries(TOOLS).map(([key, value]) => (
@@ -61,7 +61,7 @@ const About = () => {
         id="education"
         className=" flex flex-col items-center my-8 w-full max-w-5xl px-8 xl:px-4"
       >
-        <h3 className=" text-2xl text-blue-300">My education</h3>
+        <h3 className=" text-2xl text-primary-300">My education</h3>
         <p className=" my-4">pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe </p>
         <Education />
       </div>

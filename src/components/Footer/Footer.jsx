@@ -44,37 +44,37 @@ const Footer = () => {
           <VscBell color="grey" />
         </div>
       </div>
-      <div className="flex justify-between col-span-2 border-t border-slate-800 h-10">
+      <div className="flex justify-between col-span-2 border-t border-bg-200 h-10">
         <div className="flex">
-          <div className=" flex items-center h-full px-4 border-r border-r-slate-800">
+          <div className=" flex items-center h-full px-4 border-r border-r-bg-200">
             <span className=" text-sm">find me in:</span>
           </div>
-          <div className=" flex items-center h-full px-4 border-r border-r-slate-800">
-            <img src={XIcon} width={20} className=" fill-slate-600" />
+          <div className=" flex items-center h-full px-4 border-r border-r-bg-200">
+            <img src={XIcon} width={20} />
           </div>
           <a
             href="https://www.linkedin.com/in/lucas-baronio-726739b9"
             target="_blank"
-            className=" flex items-center h-full px-4 border-r border-r-slate-800"
+            className=" flex items-center h-full px-4 border-r border-r-bg-200"
             rel="noreferrer"
           >
-            <BsLinkedin size={20} />
+            <BsLinkedin size={20} className="hover:dark:fill-primary-200" />
           </a>
         </div>
         <div className=" hidden sm:flex items-center gap-2">
           <span>Made with</span>
-          <BiCoffeeTogo size={20} className=" fill-cyan-300" />
+          <BiCoffeeTogo size={20} className=" fill-primary-400" />
           <span>& 🩵</span>
         </div>
-        <div className="flex">
+        <div className="flex group">
           <a
             href="https://github.com/lucasbaronio"
             target="_blank"
-            className="flex items-center gap-2 h-full px-4 border-l border-l-slate-800"
+            className="flex items-center gap-2 h-full px-4 border-l border-l-bg-200"
             rel="noreferrer"
           >
             <span className=" hidden xs:block text-sm">@lucasbaronio</span>
-            <BsGithub size={20} />
+            <BsGithub size={20} className="group-hover:dark:fill-primary-200" />
           </a>
         </div>
       </div>

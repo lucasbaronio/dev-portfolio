@@ -10,10 +10,10 @@ const Folder = ({ name, files, open = false }) => {
     <div className="flex flex-col pl-2">
       <button
         onClick={() => setIsOpen((prevState) => !prevState)}
-        className="flex items-center gap-2 hover:bg-slate-800 cursor-pointer"
+        className="flex items-center gap-2 hover:bg-bg-200 cursor-pointer"
       >
         {isOpen ? <VscChevronDown color="white" /> : <VscChevronRight color="white" />}
-        <RiFolder3Fill color="red" />
+        <RiFolder3Fill className="fill-primary-200 dark:fill-primary-200" />
         <span>{name}</span>
       </button>
       {isOpen ? <Directory files={files} /> : null}

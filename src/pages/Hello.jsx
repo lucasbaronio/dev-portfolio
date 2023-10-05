@@ -11,7 +11,7 @@ const Hello = () => {
             <h1 className=" animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-6xl font-thin my-2">
               Lucas Baronio
             </h1>
-            <pre className=" flex text-lg sm:text-2xl text-blue-300">
+            <pre className=" flex text-lg sm:text-2xl text-primary-300">
               ${' '}
               <h2 className=" animate-typing overflow-hidden border-r-2 border-r-orange-500 pr-1">
                 Software Engineer Fullstack

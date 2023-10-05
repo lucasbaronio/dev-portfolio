@@ -107,12 +107,12 @@ button.addEventListener('click', () => {
 
   return (
     <section className="flex flex-col lg:flex-row h-full">
-      <div className="flex flex-1 items-center justify-center lg:w-1/2 lg:border-r border-r-slate-800">
+      <div className="flex flex-1 items-center justify-center lg:w-1/2 lg:border-r border-r-bg-200">
         <form
           className="w-full py-4 px-4 mx-auto max-w-lg lg:py-8"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h2 className="text-2xl text-white my-6">Let&apos;s Talk!</h2>
+          <h2 className="text-2xl text-primary-300 text-center my-6">Let&apos;s Talk!</h2>
           <div className=" flex flex-col gap-4">
             {inputs.map(
               ({ fieldName, divClassName, label, inputProps, reactFormInputOptions, textArea }) => {
@@ -138,7 +138,7 @@ button.addEventListener('click', () => {
           <Button
             className="my-8"
             type="submit"
-            gradientDuoTone="purpleToBlue"
+            gradientDuoTone="greenToBlue"
             // disabled={isLoading}
             // isProcessing={isLoading}
             size="sm"
@@ -147,7 +147,7 @@ button.addEventListener('click', () => {
           </Button>
         </form>
       </div>
-      <div className="flex lg:w-1/2 px-2 border-t lg:border-none border-t-slate-800">
+      <div className="flex lg:w-1/2 px-2 border-t lg:border-none border-t-bg-200">
         <div className="flex gap-6 w-full text-sm">
           <SyntaxHighlighter
             language="javascript"

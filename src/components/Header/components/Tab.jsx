@@ -5,10 +5,10 @@ const Tab = ({ value, name, selected, left = true, onClick, extraClass }) => {
   return (
     <button
       onClick={() => onClick(name)}
-      className={`flex items-center h-12 sm:h-full w-full sm:w-auto px-8 ${
+      className={`flex items-center h-12 sm:h-full w-full sm:w-auto px-8 hover:text-accent-100 ${
         left ? 'sm:border-r' : 'sm:border-l'
-      } border-slate-800 hover:bg-slate-800 ${
-        selected ? 'sm:border-t-2 border-t-blue-300' : ''
+      } border-bg-200 hover:bg-bg-200 ${
+        selected ? 'sm:border-t-2 border-t-accent-100' : ''
       } cursor-pointer ${extraClass}`}
     >
       <span>{value}</span>

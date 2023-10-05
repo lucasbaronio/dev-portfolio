@@ -8,7 +8,7 @@ const AboutSideBar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex items-center gap-1 pl-2 h-10 border-b border-slate-800 cursor-pointer">
+      <div className="flex items-center gap-1 pl-2 h-10 border-b border-bg-200 cursor-pointer">
         <VscChevronDown color="white" />
         <span>personal-info</span>
       </div>
@@ -68,10 +68,10 @@ const AboutSideBar = () => {
               type: 'file',
               name: 'interests',
             },
-            {
-              type: 'file',
-              name: 'lenguajes',
-            },
+            // {
+            //   type: 'file',
+            //   name: 'lenguajes',
+            // },
           ]}
         />
       </div>
