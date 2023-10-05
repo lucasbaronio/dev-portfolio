@@ -7,6 +7,35 @@ export default {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
+    colors: {
+      primary: {
+        100: '#0D6E6E',
+        200: '#4a9d9c',
+        300: '#00ADB5',
+        400: '#AAE3E2',
+        500: '#fdf6fd',
+      },
+      accent: {
+        100: '#FF4081',
+        200: '#ffe0c8',
+      },
+      text: {
+        100: '#FFFFFF',
+        200: '#e0e0e0',
+        300: '#C5C5C5',
+        700: '#878787',
+        800: '#4A4A4A',
+        900: '#000000',
+      },
+      bg: {
+        100: '#0D1F2D',
+        200: '#1d2e3d',
+        300: '#354656',
+        700: '#F5F3F7',
+        800: '#E9E4ED',
+        900: '#FFFFFF',
+      },
+    },
     extend: {
       screens: {
         xs: '480px',
