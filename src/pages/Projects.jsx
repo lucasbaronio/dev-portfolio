@@ -96,7 +96,7 @@ const Projects = () => {
       </div>
       <div className="grid xl:grid-cols-2 gap-5 max-w-4xl my-8">
         {PROJECTS.map(({ name, summary, description, mobileImage, desktopImage }) => (
-          <div key="1" className="relative max-w-lg rounded-lg overflow-hidden">
+          <div key={name} className="relative max-w-lg rounded-lg overflow-hidden">
             <a href="https://google.com" className="group" target="_blank" rel="noreferrer">
               <figure>
                 <img

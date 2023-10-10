@@ -7,7 +7,7 @@ const Education = () => {
   return (
     <div>
       <ol className="items-center xl:flex">
-        <li className="relative mb-6 xl:mb-0">
+        <li id="university" className="relative mb-6 xl:mb-0">
           <div className="flex items-center">
             <div className="z-10 flex items-center justify-center w-6 h-6 rounded-full ring-0 ring-white dark:ring-primary-100 dark:bg-primary-200 xl:ring-8 shrink-0">
               <FaGraduationCap className="dark:fill-text-100 fill-text-900" />
@@ -27,7 +27,7 @@ const Education = () => {
             </p>
           </div>
         </li>
-        <li className="relative mb-6 xl:mb-0">
+        <li id="university" className="relative mb-6 xl:mb-0">
           <div className="flex items-center">
             <div className="z-10 flex items-center justify-center w-6 h-6 rounded-full ring-0 ring-white dark:ring-primary-100 dark:bg-primary-200 xl:ring-8 shrink-0">
               <ImBooks className="dark:fill-text-100 fill-text-900" />
@@ -47,7 +47,7 @@ const Education = () => {
             </p>
           </div>
         </li>
-        <li className="relative mb-6 xl:mb-0">
+        <li id="high-school" className="relative mb-6 xl:mb-0">
           <div className="flex items-center">
             <div className="z-10 flex items-center justify-center w-6 h-6 rounded-full ring-0 ring-white dark:ring-primary-100 dark:bg-primary-200 xl:ring-8 shrink-0">
               <FaSchool className="dark:fill-text-100 fill-text-900" />

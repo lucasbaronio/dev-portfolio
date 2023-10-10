@@ -48,7 +48,7 @@ const AboutSideBar = () => {
               files: [
                 { type: 'file', name: 'tech-stack', onClick: () => navigate('#tech-stack') },
                 { type: 'file', name: 'tools', onClick: () => navigate('#tools') },
-                { type: 'file', name: 'qualities', onClick: () => navigate('#qualities') },
+                // { type: 'file', name: 'qualities', onClick: () => navigate('#qualities') },
               ],
             },
             {
@@ -56,12 +56,12 @@ const AboutSideBar = () => {
               name: 'education',
               open: false,
               files: [
+                { type: 'file', name: 'university', onClick: () => navigate('#university') },
                 {
                   type: 'file',
                   name: 'high-school',
                   onClick: () => navigate('#high-school'),
                 },
-                { type: 'file', name: 'university', onClick: () => navigate('#university') },
               ],
             },
             {
