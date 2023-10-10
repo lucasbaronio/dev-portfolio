@@ -1,4 +1,5 @@
 import Jenkins from '../../assets/jenkins.png';
+import Notion from '../../assets/notion.ico';
 import Slack from '../../assets/slack.png';
 import Jira from '../../assets/jira.png';
 import Figma from '../../assets/figma.png';
@@ -485,6 +486,12 @@ export const TOOLS = {
     component: ({ className }) => <img src={Jenkins} className={className} />,
     colors: {
       text: 'text-[#d43f3b]',
+    },
+  },
+  notion: {
+    component: ({ className }) => <img src={Notion} className={className} />,
+    colors: {
+      text: 'text-[#FFFFFF]',
     },
   },
 };
