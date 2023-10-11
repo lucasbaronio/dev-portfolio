@@ -25,7 +25,15 @@ const About = () => {
       <div id="bio" className=" flex flex-col items-center w-full max-w-4xl my-8 px-8 xl:px-4">
         <h3 className=" text-2xl text-primary-300">A bit about me</h3>
         <p className=" my-4">
-          Desde muy chico me considero un apasionado por el mundo de la tecnología, en especial...
+          I am a technology enthusiast from a very young age, and my passion for the tech world has
+          been a driving force throughout my career. I initially began my journey in the realm of
+          DevOps but soon realized that my true calling lay in the world of programming.
+        </p>
+        <p className=" my-4">
+          With a degree in Software Engineering, I am dedicated to crafting high-quality and
+          scalable web applications that not only meet user needs but also create a significant
+          impact. My goal is to continually provide value to users through innovative and impactful
+          web solutions.
         </p>
       </div>
       <div
