@@ -15,8 +15,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className=" w-full">
-      <div className=" flex items-center justify-between px-1 h-6">
+    <section className=" w-full">
+      <article className=" flex items-center justify-between px-1 h-6">
         <div className="flex gap-3">
           <div className="flex gap-1">
             <VscSourceControl color="grey" />
@@ -43,8 +43,8 @@ const Footer = () => {
           </div>
           <VscBell color="grey" />
         </div>
-      </div>
-      <div className="flex justify-between col-span-2 border-t border-bg-200 h-10">
+      </article>
+      <article className="flex justify-between col-span-2 border-t border-bg-200 h-10">
         <div className="flex">
           <div className=" flex items-center h-full px-4 border-r border-r-bg-200">
             <span className=" text-sm">find me in:</span>
@@ -62,9 +62,9 @@ const Footer = () => {
           </a>
         </div>
         <div className=" hidden sm:flex items-center gap-2">
-          <span>Made with</span>
+          <small>Made with</small>
           <BiCoffeeTogo size={20} className=" fill-primary-400" />
-          <span>& 🩵</span>
+          <small>& 🩵</small>
         </div>
         <div className="flex group">
           <a
@@ -77,8 +77,8 @@ const Footer = () => {
             <BsGithub size={20} className="group-hover:dark:fill-primary-200" />
           </a>
         </div>
-      </div>
-    </footer>
+      </article>
+    </section>
   );
 };
 

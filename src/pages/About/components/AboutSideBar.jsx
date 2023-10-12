@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom';
 const AboutSideBar = () => {
   const navigate = useNavigate();
   return (
-    <>
-      <div className="flex items-center gap-1 pl-2 h-10 border-b border-bg-200 cursor-pointer">
+    <section>
+      <article className="flex items-center gap-1 pl-2 h-10 border-b border-bg-200 cursor-pointer">
         <VscChevronDown color="white" />
         <span>personal-info</span>
-      </div>
-      <div className="mt-2">
+      </article>
+      <article className="mt-2">
         <Directory
           files={[
             {
@@ -74,8 +74,8 @@ const AboutSideBar = () => {
             // },
           ]}
         />
-      </div>
-    </>
+      </article>
+    </section>
   );
 };
 

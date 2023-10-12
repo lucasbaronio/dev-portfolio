@@ -21,8 +21,8 @@ const About = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
-      <div id="bio" className=" flex flex-col items-center w-full max-w-4xl my-8 px-8 xl:px-4">
+    <section className="flex flex-col justify-center items-center w-full">
+      <article id="bio" className=" flex flex-col items-center w-full max-w-4xl my-8 px-8 xl:px-4">
         <h3 className=" text-2xl text-primary-300">A bit about me</h3>
         <p className=" my-4">
           I am a technology enthusiast from a very young age, and my passion for the tech world has
@@ -35,16 +35,16 @@ const About = () => {
           impact. My goal is to continually provide value to users through innovative and impactful
           web solutions.
         </p>
-      </div>
-      <div
+      </article>
+      <article
         id="experience"
         className=" flex flex-col items-center w-full max-w-4xl my-8 px-8 xl:px-4"
       >
         <h3 className=" text-2xl text-primary-300">My experience</h3>
         <p className=" my-4">pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe </p>
         <Timeline />
-      </div>
-      <div id="skills" className="my-8 max-w-4xl">
+      </article>
+      <article id="skills" className="my-8 max-w-4xl">
         <section id="tech-stack" className=" flex flex-col items-center my-8 w-full px-8 xl:px-4">
           <h3 className=" text-2xl text-primary-300">My Tech Stack</h3>
           <p className=" my-4">Technologies I&apos;ve been working with recently</p>
@@ -64,16 +64,16 @@ const About = () => {
           </div>
         </section>
         <section id="qualities"></section>
-      </div>
-      <div
+      </article>
+      <article
         id="education"
         className=" flex flex-col items-center my-8 w-full max-w-5xl px-8 xl:px-4"
       >
         <h3 className=" text-2xl text-primary-300">My education</h3>
         <p className=" my-4">pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe pepe </p>
         <Education />
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

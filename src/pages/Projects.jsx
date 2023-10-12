@@ -80,7 +80,7 @@ const Projects = () => {
 
   return (
     <section className="flex flex-col items-center justify-center px-8 xl:px-4 my-10">
-      <div className=" flex flex-col items-center w-full max-w-4xl my-8 ">
+      <article className=" flex flex-col items-center w-full max-w-4xl my-8 ">
         <h3 className=" text-2xl text-primary-300">My projects</h3>
         <p className=" my-4">
           During my career as a software developer I have been able to implement some short- to
@@ -93,8 +93,8 @@ const Projects = () => {
           para aplicar mis habilidades técnicas y creativas. A continuación, les presento una lista
           de los mismos.
         </p> */}
-      </div>
-      <div className="grid xl:grid-cols-2 gap-5 max-w-4xl my-8">
+      </article>
+      <article className="grid xl:grid-cols-2 gap-5 max-w-4xl my-8">
         {PROJECTS.map(({ name, summary, description, mobileImage, desktopImage }) => (
           <div key={name} className="relative max-w-lg rounded-lg overflow-hidden">
             <a href="https://google.com" className="group" target="_blank" rel="noreferrer">
@@ -119,9 +119,9 @@ const Projects = () => {
             </div>
           </div>
         ))}
-      </div>
+      </article>
 
-      <div className=" flex flex-col items-center w-full max-w-4xl my-8 ">
+      <article className=" flex flex-col items-center w-full max-w-4xl my-8 ">
         <h3 className=" text-2xl text-primary-300">Github contributions</h3>
         <p className=" my-4">
           These are some of my contributions on Github on a personal level and working for companies
@@ -130,18 +130,18 @@ const Projects = () => {
           Estas son algunas de mis contribuciones en Github a nivel personal y trabajando para
           empresas
         </p> */}
-      </div>
-      <div className=" relative w-full max-w-xl">
-        <img src={GITHUB_CALENDAR_IMG} />
-        {githubContributions ? (
-          <span className=" absolute bottom-0 md:bottom-[20%] left-0 w-1/2">
-            {githubContributions} contributions in the last year
-          </span>
-        ) : null}
-        <div className=" absolute top-0 sm:top-1/3 right-0">
-          <Box />
+        <div className=" relative w-full max-w-xl">
+          <img loading="eager" src={GITHUB_CALENDAR_IMG} />
+          {githubContributions ? (
+            <span className=" absolute bottom-0 md:bottom-[20%] left-0 w-1/2">
+              {githubContributions} contributions in the last year
+            </span>
+          ) : null}
+          <div className=" absolute top-0 sm:top-1/3 right-0">
+            <Box />
+          </div>
         </div>
-      </div>
+      </article>
     </section>
   );
 };

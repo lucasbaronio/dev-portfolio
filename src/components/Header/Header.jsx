@@ -8,7 +8,7 @@ const Header = ({ onTabClick }) => {
   const tabSelected = useTabSelected();
 
   return (
-    <header className="flex flex-col sm:flex-row sm:justify-between h-full">
+    <section className="flex flex-col sm:flex-row sm:justify-between h-full">
       <div className="flex flex-col sm:flex-row">
         <Tab
           name={TABS.HELLO.name}
@@ -39,7 +39,7 @@ const Header = ({ onTabClick }) => {
           extraClass="lg:rounded-se-lg"
         />
       </div>
-    </header>
+    </section>
   );
 };
 
