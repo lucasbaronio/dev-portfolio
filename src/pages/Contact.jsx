@@ -1,15 +1,34 @@
-import React from 'react';
-import { Button, Label, TextInput, Textarea } from 'flowbite-react';
+import React, { useEffect, useState } from 'react';
+import { Button, Label, TextInput, Textarea, Toast } from 'flowbite-react';
+import { FaTelegramPlane } from 'react-icons/fa';
+import { HiX } from 'react-icons/hi';
 import { useForm } from 'react-hook-form';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { useSendMessage } from '../services/mutations';
+
+const NoitificationToast = ({ isAnError }) => {
+  const IconComponent = isAnError ? HiX : FaTelegramPlane;
+  return (
+    <div className="fixed right-4 bottom-20 max-w-[80vw] xs:max-w-full space-x-4 divide-x divide-gray-200 dark:divide-gray-700">
+      <Toast>
+        <IconComponent className="h-5 w-5 text-accent-100 dark:text-accent-100" />
+        <div className="pl-4 text-sm font-normal text-primary-400">
+          {isAnError ? 'An error occurred while sending the message' : 'Message sent successfully.'}
+        </div>
+      </Toast>
+    </div>
+  );
+};
 
 const Contact = () => {
+  const [show, setShow] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
+    reset,
   } = useForm({
     defaultValues: {
       name: '',
@@ -18,6 +37,24 @@ const Contact = () => {
     },
   });
   const watchAll = watch();
+  const {
+    reset: resetSubmit,
+    mutate: submitSendMessage,
+    isLoading,
+    isSuccess,
+    isError,
+  } = useSendMessage();
+
+  useEffect(() => {
+    if (isSuccess || isError) {
+      setShow(true);
+      if (isSuccess) reset();
+      setTimeout(() => {
+        setShow(false);
+        resetSubmit();
+      }, 5000);
+    }
+  }, [isSuccess, isError, reset]);
 
   const codeString = `const submitButton = document.querySelector('#sendBtn');
 
@@ -101,12 +138,48 @@ button.addEventListener('click', () => {
     },
   ];
 
+  const buildBlocksMsg = ({ name, email, message }) => {
+    return [
+      {
+        type: 'header',
+        text: {
+          type: 'plain_text',
+          text: 'Nuevo mensaje en DevPortfolio!',
+        },
+      },
+      {
+        type: 'section',
+        fields: [
+          {
+            type: 'mrkdwn',
+            text: `*Nombre:*\n${name}`,
+          },
+          {
+            type: 'mrkdwn',
+            text: `*Mail:*\n${email}`,
+          },
+          {
+            type: 'mrkdwn',
+            text: `*Mensaje:*\n${message}`,
+          },
+        ],
+      },
+    ];
+  };
+
   const onSubmit = async (payload) => {
-    console.log(payload);
+    const message = {
+      message: 'Nuevo mensaje en DevPortfolio!',
+      blocks: buildBlocksMsg(payload),
+    };
+    submitSendMessage(message, {
+      onSuccess: () => {},
+      onError: (error) => console.error(error.message),
+    });
   };
 
   return (
-    <section className="flex flex-col lg:flex-row h-full">
+    <section className="relative flex flex-col lg:flex-row h-full">
       <div className="flex flex-1 items-center justify-center lg:w-1/2 lg:border-r border-r-bg-200">
         <form
           className="w-full py-4 px-4 mx-auto max-w-lg lg:py-8"
@@ -139,11 +212,11 @@ button.addEventListener('click', () => {
             className="my-8"
             type="submit"
             gradientDuoTone="greenToBlue"
-            // disabled={isLoading}
-            // isProcessing={isLoading}
+            disabled={isLoading || isError}
+            isProcessing={isLoading}
             size="sm"
           >
-            <p>submit-message</p>
+            <span>submit-message</span>
           </Button>
         </form>
       </div>
@@ -159,6 +232,7 @@ button.addEventListener('click', () => {
           </SyntaxHighlighter>
         </div>
       </div>
+      {show ? <NoitificationToast isAnError={Boolean(isError)} /> : null}
     </section>
   );
 };
