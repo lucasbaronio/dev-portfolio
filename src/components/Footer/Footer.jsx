@@ -15,7 +15,7 @@ import {
 
 const Footer = () => {
   return (
-    <section className=" w-full">
+    <section className="w-full select-none">
       <article className=" flex items-center justify-between px-1 h-6">
         <div className="flex gap-3">
           <div className="flex gap-1">

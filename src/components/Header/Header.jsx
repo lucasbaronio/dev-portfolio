@@ -8,7 +8,7 @@ const Header = ({ onTabClick }) => {
   const tabSelected = useTabSelected();
 
   return (
-    <section className="flex flex-col sm:flex-row sm:justify-between h-full">
+    <section className="flex flex-col sm:flex-row sm:justify-between h-full select-none">
       <div className="flex flex-col sm:flex-row">
         <Tab
           name={TABS.HELLO.name}

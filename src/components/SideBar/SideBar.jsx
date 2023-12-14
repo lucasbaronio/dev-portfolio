@@ -39,7 +39,7 @@ const SideBar = ({ onTabClick }) => {
   const tabSelected = useTabSelected();
 
   return (
-    <section className="flex h-full w-full">
+    <section className="flex h-full w-full select-none">
       <article className="flex flex-col justify-between w-16 h-full border-r border-bg-200">
         <div className="flex flex-col items-center">
           <Icon
