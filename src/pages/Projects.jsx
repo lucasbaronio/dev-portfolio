@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GITHUB_CALENDAR_IMG } from '../constants/images';
 import SnakeGame from '../assets/snake-game.png';
 import SnakeGameMobile from '../assets/snake-game-mobile.png';
+import { useTranslation } from 'react-i18next';
 
 const COLORS = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
 
@@ -43,20 +44,22 @@ const PROJECTS = [
 ];
 
 const Box = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center gap-1">
-      <span className=" mr-1">Less</span>
+      <span className=" mr-1">{t('projects.githubContributions.less')}</span>
       {COLORS.map((color) => (
         <svg key={color} width="12" height="12">
           <rect width="12" height="12" fill={color} rx="2" ry="2"></rect>
         </svg>
       ))}
-      <span className=" ml-1">More</span>
+      <span className=" ml-1">{t('projects.githubContributions.more')}</span>
     </div>
   );
 };
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [githubContributions, setGithubContributions] = useState(
     sessionStorage.getItem('githubContributions'),
   );
@@ -81,18 +84,8 @@ const Projects = () => {
   return (
     <section className="flex flex-col items-center justify-center px-8 xl:px-4 my-10">
       <article className=" flex flex-col items-center w-full max-w-4xl my-8 ">
-        <h3 className=" text-2xl text-primary-300">My projects</h3>
-        <p className=" my-4">
-          During my career as a software developer I have been able to implement some short- to
-          long-range projects. Each of these projects has been an opportunity to apply my technical
-          and creative skills. Below, I present a list of them.
-        </p>
-        {/* <p>
-          Durante mi trayectoria como desarrollador de software he podido implementar algunos
-          proyectos de corto a largo alcance. Cada uno de estos proyectos ha sido una oportunidad
-          para aplicar mis habilidades técnicas y creativas. A continuación, les presento una lista
-          de los mismos.
-        </p> */}
+        <h3 className=" text-2xl text-primary-300">{t('projects.myProjects.title')}</h3>
+        <p className=" my-4">{t('projects.myProjects.description')}</p>
       </article>
       <article className="grid xl:grid-cols-2 gap-5 max-w-4xl my-8">
         {PROJECTS.map(({ name, summary, description, mobileImage, desktopImage }) => (
@@ -122,10 +115,8 @@ const Projects = () => {
       </article>
 
       <article className=" flex flex-col items-center w-full max-w-4xl my-8 ">
-        <h3 className=" text-2xl text-primary-300">Github contributions</h3>
-        <p className=" my-4">
-          These are some of my contributions on Github on a personal level and working for companies
-        </p>
+        <h3 className=" text-2xl text-primary-300">{t('projects.githubContributions.title')}</h3>
+        <p className=" my-4">{t('projects.githubContributions.description')}</p>
         {/* <p className=" my-4">
           Estas son algunas de mis contribuciones en Github a nivel personal y trabajando para
           empresas
@@ -134,7 +125,7 @@ const Projects = () => {
           <img loading="eager" src={GITHUB_CALENDAR_IMG} />
           {githubContributions ? (
             <span className=" absolute bottom-0 md:bottom-[20%] left-0 w-1/2">
-              {githubContributions} contributions in the last year
+              {`${githubContributions} ${t('projects.githubContributions.info')}`}
             </span>
           ) : null}
           <div className=" absolute top-0 sm:top-1/3 right-0">

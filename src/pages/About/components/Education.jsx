@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ImBooks } from 'react-icons/im';
 import { FaGraduationCap, FaSchool } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 
 const Education = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <ol className="items-center xl:flex">
@@ -16,14 +18,16 @@ const Education = () => {
           </div>
           <div className="mt-3 xl:pr-8">
             <h3 className="text-lg font-semibold text-text-900 dark:text-text-100">
-              ORT Uruguay University
+              {t('about.myEducation.timeline1.university')}
             </h3>
             <time className="block mb-2 text-sm font-normal leading-none text-text-300 dark:text-text-700">
-              2013 - 2019
+              {t('about.myEducation.timeline1.years')}
             </time>
-            <span className=" text-sm font-bold text-accent-100">Software Engineer</span>
+            <span className=" text-sm font-bold text-accent-100">
+              {t('about.myEducation.timeline1.title')}
+            </span>
             <p className="text-sm font-normal text-text-700 dark:text-text-300">
-              Get started with dozens of web components and interactive elements.
+              {t('about.myEducation.timeline1.description')}
             </p>
           </div>
         </li>
@@ -36,14 +40,16 @@ const Education = () => {
           </div>
           <div className="mt-3 xl:pr-8">
             <h3 className="text-lg font-semibold text-text-900 dark:text-text-100">
-              ORT Uruguay University
+              {t('about.myEducation.timeline2.university')}
             </h3>
             <time className="block mb-2 text-sm font-normal leading-none text-text-300 dark:text-text-700">
-              2013 - 2017
+              {t('about.myEducation.timeline2.years')}
             </time>
-            <span className=" text-sm font-bold text-accent-100">Software Engineer Assistant</span>
+            <span className=" text-sm font-bold text-accent-100">
+              {t('about.myEducation.timeline2.title')}
+            </span>
             <p className="text-sm font-normal text-text-700 dark:text-text-300">
-              Get started with dozens of web components and interactive elements.
+              {t('about.myEducation.timeline2.description')}
             </p>
           </div>
         </li>
@@ -56,13 +62,13 @@ const Education = () => {
           </div>
           <div className="mt-3 xl:pr-8">
             <h3 className="text-lg font-semibold text-text-900 dark:text-text-100">
-              Juan Zorrilla de San Martin High School
+              {t('about.myEducation.timeline3.university')}
             </h3>
             <time className="block mb-2 text-sm font-normal leading-none text-text-300 dark:text-text-700">
-              2006 - 2012
+              {t('about.myEducation.timeline3.years')}
             </time>
             <p className="text-sm font-normal text-text-700 dark:text-text-300">
-              Get started with dozens of web components and interactive elements.
+              {t('about.myEducation.timeline3.description')}
             </p>
           </div>
         </li>
