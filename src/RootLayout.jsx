@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react';
 import Footer from './components/Footer/Footer';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { useTranslation } from 'react-i18next';
+import { TABS } from './constants/tabs';
 
 function RootLayout() {
   const { t } = useTranslation();
   const [navOpened, setNavOpened] = useState(false);
   const [isLanding, setIsLanding] = useState(false);
-  const match = useMatch('hello');
+  const match = useMatch(TABS.HELLO);
   const navigate = useNavigate();
 
   useEffect(() => {
