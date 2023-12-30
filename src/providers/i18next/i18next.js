@@ -17,7 +17,29 @@ i18n
     resources: {
       en: {
         translation: {
+          myName: 'Lucas Baronio',
+          hello: {
+            tab: '_hello',
+            subtitle: 'Hi all. I am',
+            career: 'Software Engineer Fullstack',
+          },
           about: {
+            tab: '_about-me',
+            sideBar: {
+              personalInfo: '',
+              bio: 'bio',
+              aBitAboutMe: '_a-bit-about-me',
+              experience: 'experience',
+              fullstack: '_fullstack',
+              devops: '_devops',
+              skills: 'skills',
+              techStack: '_tech-stack',
+              tools: '_tools',
+              education: 'education',
+              university: '_university',
+              highSchool: '_high-school',
+              interests: '_interests',
+            },
             aboutMe: {
               title: 'A bit about me',
               description: {
@@ -77,26 +99,37 @@ i18n
             },
           },
           projects: {
+            tab: '_projects',
             myProjects: {
               title: 'My projects',
               description:
                 'During my career as a software developer I have been able to implement some short- to long-range projects. Each of these projects has been an opportunity to apply my technical and creative skills. Below, I present a list of them.',
-              project1: {
-                title: '',
-                description: '',
-              },
-              project2: {
-                title: '',
-                description: '',
-              },
-              project3: {
-                title: '',
-                description: '',
-              },
-              project4: {
-                title: '',
-                description: '',
-              },
+              projects: [
+                {
+                  title: 'Snake Game',
+                  subtitle: "The best snake game you've ever tried",
+                  description:
+                    'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                },
+                {
+                  title: 'Snake Game',
+                  subtitle: "The best snake game you've ever tried",
+                  description:
+                    'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                },
+                {
+                  title: 'Snake Game',
+                  subtitle: "The best snake game you've ever tried",
+                  description:
+                    'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                },
+                {
+                  title: 'Snake Game',
+                  subtitle: "The best snake game you've ever tried",
+                  description:
+                    'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                },
+              ],
             },
             githubContributions: {
               title: 'Github contributions',
@@ -107,11 +140,67 @@ i18n
               more: 'More',
             },
           },
+          contact: {
+            tab: '_contact-me',
+            title: "Let's Talk!",
+            inputs: {
+              name: {
+                label: '_name',
+                required: 'This field is required',
+                maxLength: 'El nombre y apellido no puede tener más de 100 caracteres.',
+              },
+              email: {
+                label: '_email',
+                required: 'This field is required',
+                valid: 'Please enter a correct email',
+                maxLength: 'Email cannot be longer than 100 characters.',
+              },
+              message: {
+                label: '_message',
+                required: 'This field is required',
+                maxLength: 'Message cannot be longer than 200 characters.',
+              },
+              submit: {
+                label: 'submit-message',
+              },
+            },
+            toast: {
+              success: 'Message sent successfully',
+              error: 'An error occurred while sending the message',
+            },
+          },
+          footer: {
+            branch: 'main',
+            findMeIn: 'find me in:',
+            madeWith: 'Made with',
+            github: 'lucasbaronio',
+          },
         },
       },
       es: {
         translation: {
+          myName: 'Lucas Baronio',
+          hello: {
+            tab: '_hola',
+            subtitle: 'Hola a todos. Soy',
+            career: 'Ingeniero de Software Fullstack',
+          },
           about: {
+            tab: '_acerca-de-mi',
+            sideBar: {
+              bio: 'biografía',
+              aBitAboutMe: '_sobre-mi',
+              experience: 'experiencia',
+              fullstack: '_fullstack',
+              devops: '_devops',
+              skills: 'habilidades',
+              techStack: '_tecnologías',
+              tools: '_herramientas',
+              education: 'educación',
+              university: '_universidad',
+              highSchool: '_bachillerato',
+              interests: '_intereses',
+            },
             aboutMe: {
               title: 'Un poco sobre mi',
               description: {
@@ -123,83 +212,129 @@ i18n
             },
             myExperience: {
               title: 'Mi experiencia',
-              description: 'description',
+              description: 'descripción',
               timeline1: {
                 company: 'PedidosYa',
-                tag: 'Ultimo',
+                tag: 'Último',
                 date: 'Oct. 2021 - Today',
                 position: 'Software Engineer Fullstack',
                 description:
-                  'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+                  'Obtenga acceso a más de 20 páginas, incluido un diseño de panel, gráficos, tablero kanban, calendario y páginas de marketing y comercio electrónico para pedidos anticipados.',
               },
               timeline2: {
                 company: 'KnowHow Uy',
                 date: 'Ago. 2015 - Sep. 2021',
                 position: 'DevOps',
                 description:
-                  'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+                  'Obtenga acceso a más de 20 páginas, incluido un diseño de panel, gráficos, tablero kanban, calendario y páginas de marketing y comercio electrónico para pedidos anticipados.',
               },
             },
             myTechStack: {
               title: 'Mis conocimiento tecnológico',
-              description: 'Tecnologías con las que he estado trabajando recientemente',
+              description: 'con las que he estado trabajando recientemente',
             },
             tools: {
               title: 'Herramientas',
-              description: 'Herramientas con las que he estado trabajando recientemente',
+              description: 'con las que he estado trabajando recientemente',
             },
             myEducation: {
               title: 'Mi educación',
-              description: 'description',
+              description: 'descripción',
               timeline1: {
-                university: 'ORT Uruguay University',
+                university: 'Universidad ORT Uruguay',
                 years: '2013 - 2019',
                 title: 'Ingeniero en Sistemas',
-                description: 'Get started with dozens of web components and interactive elements.',
+                description: 'Comience con docenas de componentes web y elementos interactivos.',
               },
               timeline2: {
-                university: 'ORT Uruguay University',
+                university: 'Universidad ORT Uruguay',
                 years: '2013 - 2017',
                 title: 'Asistente de Ingeniero en Sistemas',
-                description: 'Get started with dozens of web components and interactive elements.',
+                description: 'Comience con docenas de componentes web y elementos interactivos.',
               },
               timeline3: {
-                university: 'Juan Zorrilla de San Martin High School',
+                university: 'Colegio Juan Zorrilla de San Martin',
                 years: '1006 - 2012',
-                description: 'Get started with dozens of web components and interactive elements.',
+                description: 'Comience con docenas de componentes web y elementos interactivos.',
               },
             },
           },
           projects: {
+            tab: '_proyectos',
             myProjects: {
               title: 'My projects',
               description:
                 'Durante mi trayectoria como desarrollador de software he podido implementar algunos proyectos de corto a largo alcance. Cada uno de estos proyectos ha sido una oportunidad para aplicar mis habilidades técnicas y creativas. A continuación, les presento una lista de los mismos.',
-              project1: {
-                title: '',
-                description: '',
-              },
-              project2: {
-                title: '',
-                description: '',
-              },
-              project3: {
-                title: '',
-                description: '',
-              },
-              project4: {
-                title: '',
-                description: '',
-              },
+              projects: [
+                {
+                  title: 'La viborita',
+                  subtitle: 'El mejor juego de la viborita que hayas jugado',
+                  description:
+                    'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                },
+                {
+                  title: 'La viborita',
+                  subtitle: 'El mejor juego de la viborita que hayas jugado',
+                  description:
+                    'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                },
+                {
+                  title: 'La viborita',
+                  subtitle: 'El mejor juego de la viborita que hayas jugado',
+                  description:
+                    'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                },
+                {
+                  title: 'La viborita',
+                  subtitle: 'El mejor juego de la viborita que hayas jugado',
+                  description:
+                    'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                },
+              ],
             },
             githubContributions: {
-              title: 'Github contributions',
+              title: 'Contribuciones en Github',
               description:
-                'These are some of my contributions on Github on a personal level and working for companies',
-              info: 'contributions in the last year',
-              less: 'Less',
-              more: 'More',
+                'Estas son algunas de mis contribuciones en Github a nivel personal y trabajando para empresas',
+              info: 'contribuciones en el último año',
+              less: 'Menos',
+              more: 'Más',
             },
+          },
+          contact: {
+            tab: '_contacto',
+            title: 'Hablemos!',
+            inputs: {
+              name: {
+                label: '_nombre',
+                required: 'Este campo es requerido',
+                maxLength: 'El nombre y apellido no puede tener más de 100 caracteres.',
+              },
+              email: {
+                label: '_correo-electrónico',
+                required: 'Este campo es requerido',
+                valid: 'Por favor, ingrese un correo electrónico correcto',
+                maxLength: 'El correo electrónico no puede tener más de 100 caracteres.',
+              },
+              message: {
+                label: '_mensaje',
+                required: 'Este campo es requerido',
+                maxLength: 'El mensaje no puede tener más de 200 caracteres.',
+              },
+              submit: {
+                label: 'enviar-mensaje',
+              },
+            },
+            toast: {
+              success: 'Mensaje enviado correctamente',
+              error: 'Ocurrió un error al enviar el mensaje',
+            },
+          },
+          footer: {
+            branch: 'master',
+            findMeIn: 'me encontrás:',
+            madeWith: 'Hecho con',
+            github: 'lucasbaronio',
           },
         },
       },
