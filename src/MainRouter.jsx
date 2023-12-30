@@ -12,43 +12,43 @@ const router = createBrowserRouter([
     path: '/',
     element: <RootLayout />,
     handle: {
-      name: TABS.HELLO.name,
+      name: TABS.HELLO,
     },
     // errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
-        element: <Navigate to="hello" replace />,
+        element: <Navigate to={TABS.HELLO} replace />,
         handle: {
-          name: TABS.HELLO.name,
+          name: TABS.HELLO,
         },
       },
       {
-        path: TABS.HELLO.name,
+        path: TABS.HELLO,
         element: <Hello />,
         handle: {
-          name: TABS.HELLO.name,
+          name: TABS.HELLO,
         },
       },
       {
-        path: TABS.ABOUT.name,
+        path: TABS.ABOUT,
         element: <About />,
         handle: {
-          name: TABS.ABOUT.name,
+          name: TABS.ABOUT,
         },
       },
       {
-        path: TABS.PROJECTS.name,
+        path: TABS.PROJECTS,
         element: <Projects />,
         handle: {
-          name: TABS.PROJECTS.name,
+          name: TABS.PROJECTS,
         },
       },
       {
-        path: TABS.CONTACT.name,
+        path: TABS.CONTACT,
         element: <Contact />,
         handle: {
-          name: TABS.CONTACT.name,
+          name: TABS.CONTACT,
         },
       },
     ],

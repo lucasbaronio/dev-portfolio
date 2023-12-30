@@ -6,15 +6,75 @@ import { useForm } from 'react-hook-form';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useSendMessage } from '../services/mutations';
+import { useTranslation } from 'react-i18next';
 
-const NoitificationToast = ({ isAnError }) => {
+const INPUTS = [
+  (t) => ({
+    divClassName: '',
+    fieldName: 'name',
+    label: t('contact.inputs.name.label'),
+    inputProps: {
+      type: 'text',
+      maxLength: 100,
+      // placeholder: 'Ej: Juan Perez',
+    },
+    reactFormInputOptions: {
+      required: t('contact.inputs.name.required'),
+      maxLength: {
+        value: 100,
+        message: t('contact.inputs.name.maxLength'),
+      },
+    },
+  }),
+  (t) => ({
+    divClassName: '',
+    fieldName: 'email',
+    label: t('contact.inputs.email.label'),
+    inputProps: {
+      type: 'text',
+      maxLength: 100,
+    },
+    reactFormInputOptions: {
+      required: t('contact.inputs.email.required'),
+      pattern: {
+        value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+        message: t('contact.inputs.email.valid'),
+      },
+      maxLength: {
+        value: 100,
+        message: t('contact.inputs.email.maxLength'),
+      },
+    },
+  }),
+  (t) => ({
+    divClassName: '',
+    fieldName: 'message',
+    label: t('contact.inputs.message.label'),
+    inputProps: {
+      type: 'text',
+      maxLength: 200,
+      style: { height: '150px', resize: 'none' },
+    },
+    textArea: true,
+    reactFormInputOptions: {
+      required: t('contact.inputs.message.required'),
+      maxLength: {
+        value: 200,
+        message: t('contact.inputs.message.maxLength'),
+      },
+    },
+  }),
+];
+
+const NotificationToast = ({ isAnError }) => {
+  const { t } = useTranslation();
   const IconComponent = isAnError ? HiX : FaTelegramPlane;
   return (
     <div className="fixed right-4 bottom-20 max-w-[80vw] xs:max-w-full space-x-4 divide-x divide-gray-200 dark:divide-gray-700">
       <Toast>
         <IconComponent className="h-5 w-5 text-accent-100 dark:text-accent-100" />
         <div className="pl-4 text-sm font-normal text-primary-400">
-          {isAnError ? 'An error occurred while sending the message' : 'Message sent successfully.'}
+          {isAnError ? t('contact.toast.error') : t('contact.toast.success')}
         </div>
       </Toast>
     </div>
@@ -22,6 +82,7 @@ const NoitificationToast = ({ isAnError }) => {
 };
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [show, setShow] = useState(false);
   const {
     register,
@@ -80,64 +141,6 @@ button.addEventListener('click', () => {
 });
 `;
 
-  const inputs = [
-    {
-      divClassName: '',
-      fieldName: 'name',
-      label: '_name',
-      inputProps: {
-        type: 'text',
-        maxLength: 100,
-        // placeholder: 'Ej: Juan Perez',
-      },
-      reactFormInputOptions: {
-        required: 'This field is required',
-        maxLength: {
-          value: 100,
-          message: 'El nombre y apellido no puede tener mas de 100 caracteres.',
-        },
-      },
-    },
-    {
-      divClassName: '',
-      fieldName: 'email',
-      label: '_email',
-      inputProps: {
-        type: 'text',
-        maxLength: 100,
-      },
-      reactFormInputOptions: {
-        required: 'This field is required',
-        pattern: {
-          value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-          message: 'Please enter a correct email',
-        },
-        maxLength: {
-          value: 100,
-          message: 'Email cannot be longer than 100 characters.',
-        },
-      },
-    },
-    {
-      divClassName: '',
-      fieldName: 'message',
-      label: '_message',
-      inputProps: {
-        type: 'text',
-        maxLength: 200,
-        style: { height: '150px', resize: 'none' },
-      },
-      textArea: true,
-      reactFormInputOptions: {
-        required: 'This field is required',
-        maxLength: {
-          value: 200,
-          message: 'Email cannot be longer than 200 characters.',
-        },
-      },
-    },
-  ];
-
   const buildBlocksMsg = ({ name, email, message }) => {
     return [
       {
@@ -185,28 +188,34 @@ button.addEventListener('click', () => {
           className="w-full py-4 px-4 mx-auto max-w-lg lg:py-8"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h2 className="text-2xl text-primary-300 text-center my-6">Let&apos;s Talk!</h2>
+          <h2 className="text-2xl text-primary-300 text-center my-6">{t('contact.title')}</h2>
           <div className=" flex flex-col gap-4">
-            {inputs.map(
-              ({ fieldName, divClassName, label, inputProps, reactFormInputOptions, textArea }) => {
-                const Input = textArea ? Textarea : TextInput;
-                return (
-                  <div key={fieldName} className={divClassName}>
-                    <div className="mb-2 block">
-                      <Label htmlFor={fieldName} value={label} />
-                    </div>
-                    <Input
-                      id={fieldName}
-                      name={fieldName}
-                      {...inputProps}
-                      {...register(fieldName, reactFormInputOptions)}
-                      color={errors[fieldName] && 'failure'}
-                      helperText={errors[fieldName] && <span>{errors[fieldName].message}</span>}
-                    />
+            {INPUTS.map((getInputProps) => {
+              const {
+                fieldName,
+                divClassName,
+                label,
+                inputProps,
+                reactFormInputOptions,
+                textArea,
+              } = getInputProps(t);
+              const Input = textArea ? Textarea : TextInput;
+              return (
+                <div key={fieldName} className={divClassName}>
+                  <div className="mb-2 block">
+                    <Label htmlFor={fieldName} value={label} />
                   </div>
-                );
-              },
-            )}
+                  <Input
+                    id={fieldName}
+                    name={fieldName}
+                    {...inputProps}
+                    {...register(fieldName, reactFormInputOptions)}
+                    color={errors[fieldName] && 'failure'}
+                    helperText={errors[fieldName] && <span>{errors[fieldName].message}</span>}
+                  />
+                </div>
+              );
+            })}
           </div>
           <Button
             className="my-8"
@@ -216,7 +225,7 @@ button.addEventListener('click', () => {
             isProcessing={isLoading}
             size="sm"
           >
-            <span>submit-message</span>
+            <span>{t('contact.inputs.submit.label')}</span>
           </Button>
         </form>
       </div>
@@ -232,7 +241,7 @@ button.addEventListener('click', () => {
           </SyntaxHighlighter>
         </div>
       </div>
-      {show ? <NoitificationToast isAnError={Boolean(isError)} /> : null}
+      {show ? <NotificationToast isAnError={Boolean(isError)} /> : null}
     </section>
   );
 };

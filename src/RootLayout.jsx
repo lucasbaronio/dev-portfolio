@@ -4,11 +4,14 @@ import Header from './components/Header';
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer/Footer';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
+import { useTranslation } from 'react-i18next';
+import { TABS } from './constants/tabs';
 
 function RootLayout() {
+  const { t } = useTranslation();
   const [navOpened, setNavOpened] = useState(false);
   const [isLanding, setIsLanding] = useState(false);
-  const match = useMatch('hello');
+  const match = useMatch(TABS.HELLO);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,7 +30,7 @@ function RootLayout() {
           <div className="flex items-center justify-between h-12">
             <div className="flex items-center pl-2 gap-2 select-none">
               <img src="/lb-logo-white.png" width="30" height="30" />
-              <span>Lucas Baronio</span>
+              <span>{t('myName')}</span>
             </div>
             <div className=" block sm:hidden mx-3 cursor-pointer">
               {navOpened ? (
