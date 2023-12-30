@@ -4,7 +4,7 @@ import { TABS } from '../constants/tabs';
 
 export const useTabSelected = () => {
   const matches = useMatches();
-  const [tabSelected, setTabSelected] = useState(TABS.HELLO.name);
+  const [tabSelected, setTabSelected] = useState(TABS.HELLO);
 
   useEffect(() => {
     setTabSelected(matches[1]?.handle?.name);

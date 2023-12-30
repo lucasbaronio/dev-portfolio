@@ -39,37 +39,37 @@ const SideBar = ({ onTabClick }) => {
   const tabSelected = useTabSelected();
 
   return (
-    <section className="flex h-full w-full">
+    <section className="flex h-full w-full select-none">
       <article className="flex flex-col justify-between w-16 h-full border-r border-bg-200">
         <div className="flex flex-col items-center">
           <Icon
             icon={VscFiles}
-            selected={tabSelected === TABS.HELLO.name}
-            onClick={() => onTabClick(TABS.HELLO.name)}
+            selected={tabSelected === TABS.HELLO}
+            onClick={() => onTabClick(TABS.HELLO)}
           />
           <Icon
             icon={VscSearch}
-            selected={tabSelected === TABS.CONTACT.name}
-            onClick={() => onTabClick(TABS.CONTACT.name)}
+            selected={tabSelected === TABS.CONTACT}
+            onClick={() => onTabClick(TABS.CONTACT)}
           />
           <Icon
             icon={VscSourceControl}
-            selected={tabSelected === TABS.PROJECTS.name}
-            onClick={() => onTabClick(TABS.PROJECTS.name)}
+            selected={tabSelected === TABS.PROJECTS}
+            onClick={() => onTabClick(TABS.PROJECTS)}
           />
           <Icon icon={VscDebugAlt} selected={tabSelected === ''} onClick={() => {}} />
         </div>
         <div className="flex flex-col items-center">
           <Icon
             icon={VscAccount}
-            selected={tabSelected === TABS.ABOUT.name}
-            onClick={() => onTabClick(TABS.ABOUT.name)}
+            selected={tabSelected === TABS.ABOUT}
+            onClick={() => onTabClick(TABS.ABOUT)}
           />
           <Icon icon={VscGear} selected={tabSelected === ''} onClick={() => {}} />
         </div>
       </article>
       <article className="flex flex-col h-full w-full">
-        {tabSelected === TABS.ABOUT.name ? <AboutSideBar /> : null}
+        {tabSelected === TABS.ABOUT ? <AboutSideBar /> : null}
       </article>
     </section>
   );

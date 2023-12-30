@@ -12,15 +12,18 @@ import {
   VscWarning,
   VscInfo,
 } from 'react-icons/vsc';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className=" w-full">
+    <section className="w-full select-none">
       <article className=" flex items-center justify-between px-1 h-6">
         <div className="flex gap-3">
           <div className="flex gap-1">
             <VscSourceControl color="grey" />
-            <span className=" text-xs">main</span>
+            <span className=" text-xs">{t('footer.branch')}</span>
           </div>
           <div className="flex gap-1">
             <VscError color="grey" />
@@ -47,7 +50,7 @@ const Footer = () => {
       <article className="flex justify-between col-span-2 border-t border-bg-200 h-10">
         <div className="flex">
           <div className=" flex items-center h-full px-4 border-r border-r-bg-200">
-            <span className=" text-sm">find me in:</span>
+            <span className=" text-sm">{t('footer.findMeIn')}</span>
           </div>
           <div className=" flex items-center h-full px-4 border-r border-r-bg-200">
             <img src={XIcon} width={20} />
@@ -62,18 +65,18 @@ const Footer = () => {
           </a>
         </div>
         <div className=" hidden sm:flex items-center gap-2">
-          <small>Made with</small>
+          <small>{t('footer.madeWith')}</small>
           <BiCoffeeTogo size={20} className=" fill-primary-400" />
           <small>& 🩵</small>
         </div>
         <div className="flex group">
           <a
-            href="https://github.com/lucasbaronio"
+            href={`https://github.com/${t('footer.github')}`}
             target="_blank"
             className="flex items-center gap-2 h-full px-4 border-l border-l-bg-200"
             rel="noreferrer"
           >
-            <span className=" hidden xs:block text-sm">@lucasbaronio</span>
+            <span className=" hidden xs:block text-sm">@{t('footer.github')}</span>
             <BsGithub size={20} className="group-hover:dark:fill-primary-200" />
           </a>
         </div>
