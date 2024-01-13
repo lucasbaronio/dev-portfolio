@@ -4,6 +4,7 @@ import Tab from './components/Tab';
 import { TABS } from '../../constants/tabs';
 import { useTabSelected } from '../../hooks/tabSelected';
 import { useTranslation } from 'react-i18next';
+import Dropdown from './components/Dropdown';
 
 const Header = ({ onTabClick }) => {
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ const Header = ({ onTabClick }) => {
         ))}
       </div>
       <div className="flex">
+        <Dropdown />
         <Tab
           name={TABS.CONTACT}
           value={t(`${TABS.CONTACT}.tab`)}
