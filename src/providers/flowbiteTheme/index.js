@@ -6,4 +6,11 @@ export const customTheme = {
       },
     },
   },
+  avatar: {
+    root: {
+      color: {
+        accent: 'ring-accent-100 dark:ring-accent-100',
+      },
+    },
+  },
 };
