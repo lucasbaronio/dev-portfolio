@@ -17,7 +17,7 @@ const avatarTheme = {
   },
 };
 
-const Dropdown = (props) => {
+const DropdownLenguageSelector = () => {
   const { i18n } = useTranslation();
   const [currentLang, setCurrentLang] = useState(null);
 
@@ -64,7 +64,7 @@ const Dropdown = (props) => {
         </svg>
       </button>
 
-      <div className="group-hover:block hidden absolute top-12 left-4 z-10 rounded-lg shadow w-40 bg-bg-200 dark:bg-bg-200">
+      <div className="group-hover:block hidden absolute top-12 left-4 sm:left-auto sm:right-4 z-10 rounded-lg shadow w-40 bg-bg-200 dark:bg-bg-200">
         <ul className="flex flex-col text-gray-700 dark:text-gray-200">
           <li>
             <button
@@ -94,6 +94,6 @@ const Dropdown = (props) => {
   );
 };
 
-Dropdown.propTypes = {};
+DropdownLenguageSelector.propTypes = {};
 
-export default Dropdown;
+export default DropdownLenguageSelector;
