@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaDatabase, FaCode } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
+import Badge from '../../../components/Badge';
 
 const Timeline = () => {
   const { t } = useTranslation();
@@ -13,9 +14,7 @@ const Timeline = () => {
         </span>
         <h3 className="flex items-center mb-1 text-lg font-semibold text-text-900 dark:text-text-100">
           {t('about.myExperience.timeline1.company')}{' '}
-          <span className=" text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-primary-100 dark:text-primary-400 ml-3">
-            {t('about.myExperience.timeline1.tag')}
-          </span>
+          <Badge>{t('about.myExperience.timeline1.tag')}</Badge>
         </h3>
         <time className="block mb-2 text-sm font-normal leading-none text-text-300 dark:text-text-700">
           {t('about.myExperience.timeline1.date')}

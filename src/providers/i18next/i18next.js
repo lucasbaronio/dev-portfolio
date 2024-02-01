@@ -22,6 +22,7 @@ i18n
             tab: '_hello',
             subtitle: 'Hi all. I am',
             career: 'Software Engineer Fullstack',
+            badge: 'Working for PedidosYa',
           },
           about: {
             tab: '_about-me',
@@ -184,6 +185,7 @@ i18n
             tab: '_hola',
             subtitle: 'Hola a todos. Soy',
             career: 'Ingeniero de Software Fullstack',
+            badge: 'Trabajando para PedidosYa',
           },
           about: {
             tab: '_acerca-de-mi',
