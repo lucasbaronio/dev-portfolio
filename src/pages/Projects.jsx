@@ -79,7 +79,6 @@ const Projects = () => {
                       alt={title}
                     />
                   </figure>
-                  q
                   {/* <IconExternalLink className="absolute top-5 right-5 group-hover:scale-125 duration-100 text-text-100" /> */}
                 </a>
                 <div className="min-w-full h-[70%] hover:bg-bg-700/60 bg-bg-700 dark:bg-bg-300 hover:dark:bg-bg-300/60 hover:backdrop-blur-lg md:absolute md:top-[66%] md:hover:top-[30%] pl-2 md:pl-[26%] transform duration-200 py-2 pr-2">

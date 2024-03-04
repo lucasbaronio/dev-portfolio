@@ -53,29 +53,41 @@ i18n
             myExperience: {
               title: 'My experience',
               description: 'description',
-              timeline1: {
-                company: 'PedidosYa',
-                tag: 'Latest',
-                date: 'Oct. 2021 - Today',
-                position: 'Software Engineer Fullstack',
-                description:
-                  'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-              },
-              timeline2: {
-                company: 'KnowHow Uy',
-                date: 'Ago. 2015 - Sep. 2021',
-                position: 'DevOps',
-                description:
-                  'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-              },
+              timeline: [
+                {
+                  company: 'PedidosYa',
+                  tag: 'Latest',
+                  date: 'Oct. 2021 - Today',
+                  position: 'Software Engineer Fullstack',
+                  description:
+                    'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+                  icon: 'CODE',
+                },
+                {
+                  company: 'FletesApp',
+                  date: 'Feb. 2021 - Jul. 2021',
+                  position: 'Freelance software developer',
+                  description:
+                    'As a freelancer, I was able to carry out a project with another colleague for a client that needed a mobile application whose objective was to connect freight drivers with people who need their services. The App was implemented using React Native as the client-level language and Goland in the backend.',
+                  icon: 'CAR',
+                },
+                {
+                  company: 'KnowHow Uy',
+                  date: 'Ago. 2015 - Sep. 2021',
+                  position: 'DevOps',
+                  description:
+                    'In the more than 6 years working in the company, I was performing tasks as DBA/DevOps for more than 40 clients from all over Latin America. Improving and streamlining installation, configuration and monitoring tasks of database engines such as: MySQL, PostgreSQL, MongoDB, Oracle, SQL Server and Redis.',
+                  icon: 'DATABASE',
+                },
+              ],
             },
             myTechStack: {
               title: 'My Tech Stack',
-              description: 'Technologies I&apos;ve been working with recently',
+              description: "Technologies I've been working with recently",
             },
             tools: {
               title: 'Tools',
-              description: 'Technologies I&apos;ve been working with recently',
+              description: "Technologies I've been working with recently",
             },
             myEducation: {
               title: 'My education',
@@ -231,21 +243,33 @@ i18n
             myExperience: {
               title: 'Mi experiencia',
               description: 'descripción',
-              timeline1: {
-                company: 'PedidosYa',
-                tag: 'Último',
-                date: 'Oct. 2021 - Today',
-                position: 'Software Engineer Fullstack',
-                description:
-                  'Obtenga acceso a más de 20 páginas, incluido un diseño de panel, gráficos, tablero kanban, calendario y páginas de marketing y comercio electrónico para pedidos anticipados.',
-              },
-              timeline2: {
-                company: 'KnowHow Uy',
-                date: 'Ago. 2015 - Sep. 2021',
-                position: 'DevOps',
-                description:
-                  'Obtenga acceso a más de 20 páginas, incluido un diseño de panel, gráficos, tablero kanban, calendario y páginas de marketing y comercio electrónico para pedidos anticipados.',
-              },
+              timeline: [
+                {
+                  company: 'PedidosYa',
+                  tag: 'Último',
+                  date: 'Oct. 2021 - Today',
+                  position: 'Software Engineer Fullstack',
+                  description:
+                    'Obtenga acceso a más de 20 páginas, incluido un diseño de panel, gráficos, tablero kanban, calendario y páginas de marketing y comercio electrónico para pedidos anticipados.',
+                  icon: 'CODE',
+                },
+                {
+                  company: 'FletesApp',
+                  date: 'Feb. 2021 - Jul. 2021',
+                  position: 'Desarrollador de software independiente',
+                  description:
+                    'Como freelance, pude llevar a cabo con otro compañero un proyecto para un cliente que necesitaba una aplicación mobile cuyo objetivo era conectar fleteros con personas que necesitan sus servicios. La App se implementó utilizando React Native como lenguaje a nivel cliente y Goland en el backend.',
+                  icon: 'CAR',
+                },
+                {
+                  company: 'KnowHow Uy',
+                  date: 'Ago. 2015 - Sep. 2021',
+                  position: 'DevOps',
+                  description:
+                    'En los mas de 6 años trabajando en la empresa, estuve desempeñando tareas como DBA/DevOps para mas de 40 clientes de todo Latinoamérica. Mejorando y agilizando tareas de instalación, configuración y monitoreo de motores de base de datos tales como: MySQL, PostgreSQL, MongoDB, Oracle, SQL Server y Redis.',
+                  icon: 'DATABASE',
+                },
+              ],
             },
             myTechStack: {
               title: 'Mis conocimiento tecnológico',
