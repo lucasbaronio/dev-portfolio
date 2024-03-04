@@ -111,24 +111,40 @@ i18n
                   subtitle: "The best snake game you've ever tried",
                   description:
                     'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
                   title: 'Snake Game',
                   subtitle: "The best snake game you've ever tried",
                   description:
                     'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
                   title: 'Snake Game',
                   subtitle: "The best snake game you've ever tried",
                   description:
                     'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
                   title: 'Snake Game',
                   subtitle: "The best snake game you've ever tried",
                   description:
                     'Experience the nostalgia of the classic Snake game made with well-known languages ​​such as HTML and javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
               ],
             },
@@ -273,24 +289,40 @@ i18n
                   subtitle: 'El mejor juego de la viborita que hayas jugado',
                   description:
                     'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
                   title: 'La viborita',
                   subtitle: 'El mejor juego de la viborita que hayas jugado',
                   description:
                     'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
                   title: 'La viborita',
                   subtitle: 'El mejor juego de la viborita que hayas jugado',
                   description:
                     'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
                   title: 'La viborita',
                   subtitle: 'El mejor juego de la viborita que hayas jugado',
                   description:
                     'Experimenta la nostalgia del clásico juego de Snake realizado con lenguajes mas que conocidos como son HTML y javascript',
+                  desktopImg: 'SNAKE_GAME_DESKTOP',
+                  mobileImg: 'SNAKE_GAME_MOBILE',
+                  deployURL: 'https://snake-game-cl9o9zkag-lucasbaronio.vercel.app/',
+                  projectURL: 'https://github.com/lucasbaronio/snake-game',
                 },
               ],
             },
