@@ -37,13 +37,18 @@ const AboutSideBar = () => {
               files: [
                 {
                   type: 'file',
-                  name: t('about.sideBar.fullstack'),
-                  onClick: () => navigate('#fullstack'),
+                  name: t('about.sideBar.pedidosYa'),
+                  onClick: () => navigate('#_pedidos-ya'),
                 },
                 {
                   type: 'file',
-                  name: t('about.sideBar.devops'),
-                  onClick: () => navigate('#devops'),
+                  name: t('about.sideBar.fletesApp'),
+                  onClick: () => navigate('#_fletes-app'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.knowhowUy'),
+                  onClick: () => navigate('#_knowhow-uy'),
                 },
               ],
             },

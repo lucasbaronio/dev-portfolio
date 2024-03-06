@@ -18,9 +18,9 @@ const Timeline = () => {
 
   return (
     <ol className="relative border-l border-bg-700 dark:border-accent-100">
-      {timelineItems.map(({ company, ...rest }) => (
-        <li id="fullstack" key={company} className="mb-10 ml-8">
-          <TimelineItem company={company} {...rest} />
+      {timelineItems.map(({ id, ...rest }) => (
+        <li id={id} key={id} className="mb-10 ml-8">
+          <TimelineItem {...rest} />
         </li>
       ))}
     </ol>

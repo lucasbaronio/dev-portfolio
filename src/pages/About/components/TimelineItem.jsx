@@ -8,7 +8,7 @@ const TimelineItem = ({ icon, company, tag, date, position, description }) => {
   return (
     <>
       <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white dark:ring-primary-100 dark:bg-primary-200">
-        <Icon className="dark:fill-text-100 fill-text-900" />
+        <img src={Icon} width={18} />
       </span>
       <h3 className="flex items-center mb-1 text-lg font-semibold text-text-900 dark:text-text-100">
         {company} {tag ? <Badge>{tag}</Badge> : null}

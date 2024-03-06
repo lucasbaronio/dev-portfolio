@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import XIcon from '../../assets/x.svg';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import GithubIcon from '../../assets/github.svg';
+import LinkedinIcon from '../../assets/linkedin.svg';
 import { BiCoffeeTogo } from 'react-icons/bi';
 import {
   VscCheckAll,
@@ -61,7 +62,7 @@ const Footer = () => {
             className=" flex items-center h-full px-4 border-r border-r-bg-200"
             rel="noreferrer"
           >
-            <BsLinkedin size={20} className="hover:dark:fill-primary-200" />
+            <img src={LinkedinIcon} width={30} />
           </a>
         </div>
         <div className=" hidden sm:flex items-center gap-2">
@@ -77,7 +78,7 @@ const Footer = () => {
             rel="noreferrer"
           >
             <span className=" hidden xs:block text-sm">@{t('footer.github')}</span>
-            <BsGithub size={20} className="group-hover:dark:fill-primary-200" />
+            <img src={GithubIcon} className="group-hover:dark:fill-primary-200" width={30} />
           </a>
         </div>
       </article>
