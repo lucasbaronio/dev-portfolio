@@ -46,9 +46,9 @@ i18n
               title: 'A bit about me',
               description: {
                 part1:
-                  'I am a technology enthusiast from a very young age, and my passion for the tech world has been a driving force throughout my career. I initially began my journey in the realm of DevOps but soon realized that my true calling lay in the world of programming.',
+                  'I have been a technology enthusiast since I was young, and my passion for this field has been a driving force throughout my career. I initially started my journey in the DevOps realm, but soon realized that my true calling was in the world of programming.',
                 part2:
-                  'With a degree in Software Engineering, I am dedicated to crafting high-quality and scalable web applications that not only meet user needs but also create a significant impact. My goal is to continually provide value to users through innovative and impactful web solutions.',
+                  'As a Software Engineer, I specialize in creating scalable, high-quality web applications that not only meet user needs but also make a significant impact. My goal is to continuously provide value to users through innovative and impactful web solutions.',
               },
             },
             myExperience: {
@@ -71,7 +71,7 @@ i18n
                   date: 'Feb. 2021 - Jul. 2021',
                   position: 'React Native developer',
                   description:
-                    'As a freelancer, I was able to carry out a project with another colleague for a client that needed a mobile application whose objective was to connect freight drivers with people who need their services. The App was implemented using React Native as the client-level language and Golang in the backend.',
+                    'As a freelancer, I had the opportunity to collaborate with a colleague on a project for a specific client, developing a mobile application that connected transporters with users in need of their services. The app was implemented using React Native on the client side and Golang on the backend.',
                   icon: 'TRUCK',
                 },
                 {
@@ -80,7 +80,7 @@ i18n
                   date: 'Ago. 2015 - Sep. 2021',
                   position: 'DevOps',
                   description:
-                    'In the more than 6 years working in the company, I was performing tasks as DBA/DevOps for more than 40 clients from all over Latin America. Improving and streamlining installation, configuration and monitoring tasks of database engines such as: MySQL, PostgreSQL, MongoDB, Oracle, SQL Server and Redis.',
+                    'In over 6 years working at the company, I performed tasks as a DBA/DevOps for over 40 clients throughout Latin America. I improved and streamlined tasks related to installation, configuration, and monitoring of database engines such as MySQL, PostgreSQL, MongoDB, Oracle, SQL Server, and Redis.',
                   icon: 'DATABASE',
                 },
               ],
@@ -231,9 +231,9 @@ i18n
               title: 'Un poco sobre mi',
               description: {
                 part1:
-                  'Soy un entusiasta de la tecnología desde muy joven y mi pasión por el mundo de la tecnología ha sido un motor a lo largo de mi carrera. Inicialmente comencé mi viaje en el ámbito de DevOps, pero pronto me di cuenta de que mi verdadera vocación residía en el mundo de la programación.',
+                  'Soy un entusiasta de la tecnología desde muy joven y mi pasión por este mundo ha sido un motor a lo largo de mi carrera. Inicialmente comencé mi viaje en el ámbito de DevOps, pero pronto me di cuenta de que mi verdadera vocación estaba en el sector de la programación.',
                 part2:
-                  'Licenciado en Ingeniería de Software, me dedico a crear aplicaciones web escalables y de alta calidad que no solo satisfagan las necesidades del usuario sino que también generen un impacto significativo. Mi objetivo es brindar valor continuamente a los usuarios a través de soluciones web innovadoras e impactantes.',
+                  'Como Ingeniero de Software, me dedico a crear aplicaciones web escalables y de alta calidad que no solo satisfagan las necesidades del usuario sino que generen un impacto significativo. Mi objetivo es brindar valor continuamente a los usuarios a través de soluciones web innovadoras e impactantes.',
               },
             },
             myExperience: {
@@ -256,7 +256,7 @@ i18n
                   date: 'Feb. 2021 - Jul. 2021',
                   position: 'Desarrollador React Native',
                   description:
-                    'Como freelance, pude llevar a cabo con otro compañero un proyecto para un cliente que necesitaba una aplicación mobile cuyo objetivo era conectar fleteros con personas que necesitan sus servicios. La App se implementó utilizando React Native como lenguaje a nivel cliente y Golang en el backend.',
+                    'Como freelance, tuve la oportunidad de colaborar con un colega en un proyecto para un cliente específico, desarrollando una aplicación móvil que conectara a transportistas con usuarios que necesitaran de sus servicios. La App se implementó utilizando React Native como lenguaje a nivel cliente y Golang en el backend.',
                   icon: 'TRUCK',
                 },
                 {
@@ -265,7 +265,7 @@ i18n
                   date: 'Ago. 2015 - Sep. 2021',
                   position: 'DevOps',
                   description:
-                    'En los mas de 6 años trabajando en la empresa, estuve desempeñando tareas como DBA/DevOps para mas de 40 clientes de todo Latinoamérica. Mejorando y agilizando tareas de instalación, configuración y monitoreo de motores de base de datos tales como: MySQL, PostgreSQL, MongoDB, Oracle, SQL Server y Redis.',
+                    'En más de 6 años trabajando en la empresa, desempeñé tareas como DBA/DevOps para más de 40 clientes de todo Latinoamérica. Mejorando y agilizando tareas de instalación, configuración y monitoreo de motores de base de datos tales como: MySQL, PostgreSQL, MongoDB, Oracle, SQL Server y Redis.',
                   icon: 'DATABASE',
                 },
               ],
