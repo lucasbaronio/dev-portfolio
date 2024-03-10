@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Badge from '../../../components/Badge';
 import { ICON_COMPONENT_MAPPER } from '../../../constants/images';
+import Stats from './Stats';
 
-const TimelineItem = ({ icon, company, tag, date, position, description }) => {
+const TimelineItem = ({ icon, company, tag, date, position, description, stats }) => {
   const Icon = ICON_COMPONENT_MAPPER[icon];
   return (
     <>
@@ -17,18 +18,20 @@ const TimelineItem = ({ icon, company, tag, date, position, description }) => {
         {date}
       </time>
       <span className=" text-sm font-bold text-accent-100">{position}</span>
-      <p className="mb-4 text-base font-normal text-text-700 dark:text-text-300">{description}</p>
+      <p className="mb-4 text-text-700 dark:text-text-300">{description}</p>
+      {stats ? <Stats stats={stats} /> : null}
     </>
   );
 };
 
 TimelineItem.propTypes = {
-  icon: PropTypes.element,
+  icon: PropTypes.string,
   company: PropTypes.string,
   tag: PropTypes.string,
   date: PropTypes.string,
   position: PropTypes.string,
   description: PropTypes.string,
+  stats: PropTypes.array,
 };
 
 export default TimelineItem;
