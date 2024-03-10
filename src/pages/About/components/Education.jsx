@@ -9,7 +9,7 @@ const Education = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <ol className="items-center xl:flex">
+      <ol className="xl:flex">
         <li id="university" className="relative mb-6 xl:mb-0">
           <div className="flex items-center">
             <div className="z-10 flex items-center justify-center w-6 h-6 rounded-full ring-0 ring-white dark:ring-primary-100 dark:bg-primary-200 xl:ring-8 shrink-0">
