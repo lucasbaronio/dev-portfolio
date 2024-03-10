@@ -54,6 +54,33 @@ const AboutSideBar = () => {
             },
             {
               type: 'folder',
+              name: t('about.sideBar.conferences'),
+              open: false,
+              files: [
+                {
+                  type: 'file',
+                  name: t('about.sideBar.pgkaz'),
+                  onClick: () => navigate('#_PGKAZ'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.dbaas'),
+                  onClick: () => navigate('#_DBaaS'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.mongoBkp'),
+                  onClick: () => navigate('#_mongo-bkp'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.mongoWS'),
+                  onClick: () => navigate('#_mongo-ws'),
+                },
+              ],
+            },
+            {
+              type: 'folder',
               name: t('about.sideBar.skills'),
               open: false,
               files: [

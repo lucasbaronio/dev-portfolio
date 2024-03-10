@@ -4,6 +4,10 @@ import FletesApp from '../assets/fletesApp.png';
 import FletesAppMobile from '../assets/fletesAppMobile.png';
 import Pimbay from '../assets/pimbayDesktop.png';
 import PimbayMobile from '../assets/pimbayMobile.png';
+import Pgkaz from '../assets/pgkaz.png';
+import PostgresMysql from '../assets/postgresMysql.png';
+import MongoDB from '../assets/mongoDB.png';
+import MongoBkp from '../assets/mongoBkp.jpeg';
 import Truck from '../assets/truck.svg';
 import Code from '../assets/code.svg';
 import Database from '../assets/database.svg';
@@ -18,6 +22,10 @@ export const IMAGES = {
   FLETES_APP_MOBILE: 'FLETES_APP_MOBILE',
   PIMBAY_DESKTOP: 'PIMBAY_DESKTOP',
   PIMBAY_MOBILE: 'PIMBAY_MOBILE',
+  PGKAZ_DESKTOP: 'PGKAZ_DESKTOP',
+  POSTGRES_MYSQL_DESKTOP: 'POSTGRES_MYSQL_DESKTOP',
+  MONGO_BKP_DESKTOP: 'MONGO_BKP_DESKTOP',
+  MONGODB_DESKTOP: 'MONGODB_DESKTOP',
 };
 
 export const IMAGE_COMPONENT_MAPPER = {
@@ -27,6 +35,10 @@ export const IMAGE_COMPONENT_MAPPER = {
   [IMAGES.FLETES_APP_MOBILE]: FletesAppMobile,
   [IMAGES.PIMBAY_DESKTOP]: Pimbay,
   [IMAGES.PIMBAY_MOBILE]: PimbayMobile,
+  [IMAGES.PGKAZ_DESKTOP]: Pgkaz,
+  [IMAGES.POSTGRES_MYSQL_DESKTOP]: PostgresMysql,
+  [IMAGES.MONGO_BKP_DESKTOP]: MongoBkp,
+  [IMAGES.MONGODB_DESKTOP]: MongoDB,
 };
 
 export const ICONS = {
