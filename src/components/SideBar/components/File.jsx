@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RiFile3Fill } from 'react-icons/ri';
+import FileIcon from '../../../assets/file.svg';
 
 const File = ({ name, onClick }) => (
   <button
     onClick={onClick}
     className="flex items-center w-full gap-2 pl-2 hover:bg-bg-200 cursor-pointer"
   >
-    <RiFile3Fill className="fill-accent-100 dark:fill-accent-100" />
-    <span>{name}</span>
+    <img src={FileIcon} width={15} />
+    <span className="text-ellipsis whitespace-nowrap overflow-hidden">{name}</span>
   </button>
 );
 

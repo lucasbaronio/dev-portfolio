@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Badge from '../components/Badge';
 // import VerticalCarousel from '../components/VerticalCarousel';
 
 const Hello = () => {
@@ -10,6 +11,9 @@ const Hello = () => {
       <div className="flex flex-wrap w-full relative">
         <div className=" flex basis-96 items-center justify-center flex-1 px-4">
           <div className="flex flex-col my-5">
+            <div className="flex justify-end my-2">
+              <Badge>{t('hello.badge')}</Badge>
+            </div>
             <h4 className=" text-lg">{t('hello.subtitle')}</h4>
             <h1 className=" animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-6xl font-thin my-2">
               {t('myName')}

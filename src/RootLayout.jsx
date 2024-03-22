@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { useTranslation } from 'react-i18next';
 import { TABS } from './constants/tabs';
+import DropdownLenguageSelector from './components/Header/components/DropdownLenguageSelector';
 
 function RootLayout() {
   const { t } = useTranslation();
@@ -32,7 +33,10 @@ function RootLayout() {
               <img src="/lb-logo-white.png" width="30" height="30" />
               <span>{t('myName')}</span>
             </div>
-            <div className=" block sm:hidden mx-3 cursor-pointer">
+            <div className="hidden sm:flex md:hidden h-full">
+              <DropdownLenguageSelector />
+            </div>
+            <div className="block sm:hidden mx-3 cursor-pointer">
               {navOpened ? (
                 <RxCross1 size={30} onClick={() => setNavOpened((prevState) => !prevState)} />
               ) : (

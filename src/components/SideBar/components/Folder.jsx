@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
-import { RiFolder3Fill } from 'react-icons/ri';
 import Directory from './Directory';
+import FolderIcon from '../../../assets/folder.svg';
 
 const Folder = ({ name, files, open = false }) => {
   const [isOpen, setIsOpen] = useState(open);
@@ -13,8 +13,8 @@ const Folder = ({ name, files, open = false }) => {
         className="flex items-center gap-2 hover:bg-bg-200 cursor-pointer"
       >
         {isOpen ? <VscChevronDown color="white" /> : <VscChevronRight color="white" />}
-        <RiFolder3Fill className="fill-primary-200 dark:fill-primary-200" />
-        <span>{name}</span>
+        <img src={FolderIcon} width={18} />
+        <span className="text-ellipsis whitespace-nowrap overflow-hidden">{name}</span>
       </button>
       {isOpen ? <Directory files={files} /> : null}
     </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Avatar } from 'flowbite-react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+
+var SPANISH_REGEX = /^es-[A-Z]{2}$/;
 
 const LANG = {
   SPANISH: 'es',
@@ -17,12 +18,13 @@ const avatarTheme = {
   },
 };
 
-const Dropdown = (props) => {
+const DropdownLenguageSelector = () => {
   const { i18n } = useTranslation();
   const [currentLang, setCurrentLang] = useState(null);
 
   useEffect(() => {
-    setCurrentLang(i18n.language);
+    if (SPANISH_REGEX.test(i18n.language)) setCurrentLang(LANG.SPANISH);
+    else setCurrentLang(LANG.ENGLISH);
   }, [i18n.language]);
 
   const setSpanishLang = () => {
@@ -64,14 +66,14 @@ const Dropdown = (props) => {
         </svg>
       </button>
 
-      <div className="group-hover:block hidden absolute top-12 left-4 z-10 rounded-lg shadow w-40 bg-bg-200 dark:bg-bg-200">
+      <div className="group-hover:block hidden absolute top-12 left-4 sm:left-auto sm:right-4 z-10 rounded-lg shadow w-40 bg-bg-200 dark:bg-bg-200">
         <ul className="flex flex-col text-gray-700 dark:text-gray-200">
           <li>
             <button
               onClick={setSpanishLang}
               className="flex items-center group w-full gap-2 px-2 py-2 hover:bg-bg-300 rounded-ss-lg rounded-se-lg"
             >
-              <Avatar size="sm" img="/es.png" rounded />
+              <Avatar size="sm" img={`/${LANG.SPANISH}.png`} rounded />
               <span className="group-hover:text-accent-100 dark:group-hover:text-accent-100">
                 Español
               </span>
@@ -82,7 +84,7 @@ const Dropdown = (props) => {
               onClick={setEnglishLang}
               className="flex items-center group w-full gap-2 px-2 py-2 hover:bg-bg-300 rounded-es-lg rounded-ee-lg"
             >
-              <Avatar size="sm" img="/en.png" rounded />
+              <Avatar size="sm" img={`/${LANG.ENGLISH}.png`} rounded />
               <span className="group-hover:text-accent-100 dark:group-hover:text-accent-100">
                 Inglés
               </span>
@@ -94,6 +96,6 @@ const Dropdown = (props) => {
   );
 };
 
-Dropdown.propTypes = {};
+DropdownLenguageSelector.propTypes = {};
 
-export default Dropdown;
+export default DropdownLenguageSelector;

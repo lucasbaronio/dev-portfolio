@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // import { VscChevronDown } from 'react-icons/vsc';
 import Directory from '../../../components/SideBar/components/Directory';
 import { useNavigate } from 'react-router-dom';
@@ -37,13 +36,45 @@ const AboutSideBar = () => {
               files: [
                 {
                   type: 'file',
-                  name: t('about.sideBar.fullstack'),
-                  onClick: () => navigate('#fullstack'),
+                  name: t('about.sideBar.pedidosYa'),
+                  onClick: () => navigate('#_pedidos-ya'),
                 },
                 {
                   type: 'file',
-                  name: t('about.sideBar.devops'),
-                  onClick: () => navigate('#devops'),
+                  name: t('about.sideBar.fletesApp'),
+                  onClick: () => navigate('#_fletes-app'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.knowhowUy'),
+                  onClick: () => navigate('#_knowhow-uy'),
+                },
+              ],
+            },
+            {
+              type: 'folder',
+              name: t('about.sideBar.conferences'),
+              open: false,
+              files: [
+                {
+                  type: 'file',
+                  name: t('about.sideBar.pgkaz'),
+                  onClick: () => navigate('#_PGKAZ'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.dbaas'),
+                  onClick: () => navigate('#_DBaaS'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.mongoBkp'),
+                  onClick: () => navigate('#_mongo-bkp'),
+                },
+                {
+                  type: 'file',
+                  name: t('about.sideBar.mongoWS'),
+                  onClick: () => navigate('#_mongo-ws'),
                 },
               ],
             },

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tab from './components/Tab';
 import { TABS } from '../../constants/tabs';
-import { useTabSelected } from '../../hooks/tabSelected';
+import { useTabSelected } from '../../hooks/useTabSelected';
 import { useTranslation } from 'react-i18next';
-import Dropdown from './components/Dropdown';
+import DropdownLenguageSelector from './components/DropdownLenguageSelector';
 
 const Header = ({ onTabClick }) => {
   const { t } = useTranslation();
@@ -23,8 +23,10 @@ const Header = ({ onTabClick }) => {
           />
         ))}
       </div>
-      <div className="flex">
-        <Dropdown />
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex sm:hidden md:flex">
+          <DropdownLenguageSelector />
+        </div>
         <Tab
           name={TABS.CONTACT}
           value={t(`${TABS.CONTACT}.tab`)}
