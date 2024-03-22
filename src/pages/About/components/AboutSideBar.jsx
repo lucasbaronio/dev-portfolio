@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // import { VscChevronDown } from 'react-icons/vsc';
 import Directory from '../../../components/SideBar/components/Directory';
 import { useNavigate } from 'react-router-dom';

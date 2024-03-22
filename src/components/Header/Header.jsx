@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tab from './components/Tab';
 import { TABS } from '../../constants/tabs';
-import { useTabSelected } from '../../hooks/tabSelected';
+import { useTabSelected } from '../../hooks/useTabSelected';
 import { useTranslation } from 'react-i18next';
 import DropdownLenguageSelector from './components/DropdownLenguageSelector';
 

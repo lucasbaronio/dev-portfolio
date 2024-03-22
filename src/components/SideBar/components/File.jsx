@@ -8,7 +8,7 @@ const File = ({ name, onClick }) => (
     className="flex items-center w-full gap-2 pl-2 hover:bg-bg-200 cursor-pointer"
   >
     <img src={FileIcon} width={15} />
-    <span>{name}</span>
+    <span className="text-ellipsis whitespace-nowrap overflow-hidden">{name}</span>
   </button>
 );
 

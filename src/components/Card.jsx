@@ -17,9 +17,18 @@ Link.propTypes = {
   url: PropTypes.string,
 };
 
-const Card = ({ title, subtitle, description, mobileImg, desktopImg, externalURL, imageURL }) => {
+const Card = ({
+  id,
+  title,
+  subtitle,
+  description,
+  mobileImg,
+  desktopImg,
+  externalURL,
+  imageURL,
+}) => {
   return (
-    <div key={imageURL} className="relative max-w-lg rounded-lg overflow-hidden">
+    <div id={id} className="relative max-w-lg rounded-lg overflow-hidden">
       <Link url={imageURL}>
         <figure>
           <img
@@ -59,6 +68,7 @@ const Card = ({ title, subtitle, description, mobileImg, desktopImg, externalURL
 };
 
 Card.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   description: PropTypes.string,

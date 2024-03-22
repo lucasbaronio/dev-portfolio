@@ -10,7 +10,8 @@ import {
 } from 'react-icons/vsc';
 import AboutSideBar from '../../pages/About/components/AboutSideBar';
 import { TABS } from '../../constants/tabs';
-import { useTabSelected } from '../../hooks/tabSelected';
+import { useTabSelected } from '../../hooks/useTabSelected';
+import ProjectsSideBar from '../../pages/Projects/ProjectsSideBar';
 
 const Icon = ({ icon: Component, selected, onClick }) => {
   return (
@@ -70,6 +71,7 @@ const SideBar = ({ onTabClick }) => {
       </article>
       <article className="flex flex-col h-full w-full">
         {tabSelected === TABS.ABOUT ? <AboutSideBar /> : null}
+        {tabSelected === TABS.PROJECTS ? <ProjectsSideBar /> : null}
       </article>
     </section>
   );

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import Timeline from './components/Timeline';
 import { STACKS, TOOLS } from './constants';
@@ -7,22 +6,13 @@ import Logo from './components/Logo';
 import Education from './components/Education';
 import { useTranslation } from 'react-i18next';
 import Card from '../../components/Card';
+import { useScrollToSection } from '../../hooks/useScrollToSection';
 
 const About = () => {
   const { t, ready } = useTranslation();
   const [conferences, setConferences] = useState([]);
-  const { hash } = useLocation();
 
-  useEffect(() => {
-    scrollToSection(hash.replace('#', ''));
-  }, [hash]);
-
-  const scrollToSection = (section) => {
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  useScrollToSection();
 
   useEffect(() => {
     if (ready)
@@ -60,9 +50,7 @@ const About = () => {
         <p className=" my-4">{t('about.myConferences.description')}</p>
         <div className="grid xl:grid-cols-2 gap-5 max-w-4xl 2xl:max-w-5xl my-8">
           {conferences.map(({ id, ...conference }) => (
-            <div id={id} key={id}>
-              <Card {...conference} />
-            </div>
+            <Card id={id} key={id} {...conference} />
           ))}
         </div>
       </article>

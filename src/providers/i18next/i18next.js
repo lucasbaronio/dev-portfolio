@@ -193,13 +193,20 @@ i18n
           },
           projects: {
             tab: '_projects',
+            sideBar: {
+              projects: 'projects',
+              snakeGame: '_snake-game',
+              fletesApp: '_fletes-app',
+              pimbay: '_pimbay',
+              gitContributions: '_git-contributions',
+            },
             myProjects: {
               title: 'My projects',
               description:
                 'During my career as a software developer I have been able to implement some short- to long-range projects. Each of these projects has been an opportunity to apply my technical and creative skills. Below, I present a list of them.',
               projects: [
                 {
-                  id: 1,
+                  id: '_snake-game',
                   title: 'Snake Game',
                   subtitle: "The best snake game you've ever tried!!!",
                   description:
@@ -210,7 +217,7 @@ i18n
                   imageURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
-                  id: 2,
+                  id: '_fletes-app',
                   title: 'FletesApp',
                   subtitle:
                     'Moving what you imagine from one point to another has never been so easy.',
@@ -222,7 +229,7 @@ i18n
                   imageURL: 'https://github.com/lucasbaronio/fletes-app',
                 },
                 {
-                  id: 3,
+                  id: '_pimbay',
                   title: 'Pimbay',
                   subtitle: 'What are you up to do today?',
                   description:
@@ -458,13 +465,20 @@ i18n
           },
           projects: {
             tab: '_proyectos',
+            sideBar: {
+              projects: 'proyectos',
+              snakeGame: '_la-vivorita',
+              fletesApp: '_fletes-app',
+              pimbay: '_pimbay',
+              gitContributions: '_git-contribuciones',
+            },
             myProjects: {
               title: 'My projects',
               description:
                 'Durante mi trayectoria como desarrollador de software he podido implementar algunos proyectos de corto a largo alcance. Cada uno de estos proyectos ha sido una oportunidad para aplicar mis habilidades técnicas y creativas. A continuación, les presento una lista de los mismos.',
               projects: [
                 {
-                  id: 1,
+                  id: '_la-vivorita',
                   title: 'La viborita',
                   subtitle: 'El mejor juego de la viborita que hayas jugado',
                   description:
@@ -475,7 +489,7 @@ i18n
                   imageURL: 'https://github.com/lucasbaronio/snake-game',
                 },
                 {
-                  id: 2,
+                  id: '_fletes-app',
                   title: 'FletesApp',
                   subtitle: 'Trasladar lo que te imagines de un punto a otro nunca fue tan facil',
                   description:
@@ -486,7 +500,7 @@ i18n
                   imageURL: 'https://github.com/lucasbaronio/fletes-app',
                 },
                 {
-                  id: 3,
+                  id: '_pimbay',
                   title: 'Pimbay',
                   subtitle: '¿Qué estás para hacer hoy?',
                   description:
@@ -547,7 +561,7 @@ i18n
     },
 
     debug: true,
-    fallbackLng: 'en',
+    fallbackLng: 'es',
 
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape

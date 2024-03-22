@@ -14,7 +14,7 @@ const Folder = ({ name, files, open = false }) => {
       >
         {isOpen ? <VscChevronDown color="white" /> : <VscChevronRight color="white" />}
         <img src={FolderIcon} width={18} />
-        <span>{name}</span>
+        <span className="text-ellipsis whitespace-nowrap overflow-hidden">{name}</span>
       </button>
       {isOpen ? <Directory files={files} /> : null}
     </div>
