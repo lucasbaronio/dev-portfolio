@@ -58,7 +58,7 @@ i18n
             },
             myExperience: {
               title: 'My experience',
-              description: 'description',
+              description: '',
               timeline: [
                 {
                   id: '_pedidos-ya',
@@ -66,7 +66,8 @@ i18n
                   tag: 'Latest',
                   date: 'Oct. 2021 - Today',
                   position: 'Software Engineer Fullstack',
-                  description: 'Some data that represents the impact of my work:',
+                  description:
+                    "PedidosYa is a food delivery company (present throughout Latin America) where 100% of its profits depend exclusively on its web platforms and mobile app. Within the company I find myself performing tasks as a web and backend developer providing services on the checkout screens and payment methods. Our main objective is to improve the user's payment experience, providing them with as many ways as possible to pay for their order in a secure way. Some data that represents the impact of my work since I have been in the company:",
                   icon: 'CODE',
                   stats: [
                     {
@@ -161,11 +162,12 @@ i18n
             },
             myTechStack: {
               title: 'My Tech Stack',
-              description: "Technologies I've been working with recently",
+              description:
+                'with whom I carried out the different projects that were presented to me',
             },
             tools: {
               title: 'Tools',
-              description: "Technologies I've been working with recently",
+              description: "I've been working with recently",
             },
             myEducation: {
               title: 'My education',
@@ -320,15 +322,16 @@ i18n
             },
             myExperience: {
               title: 'Mi experiencia',
-              description: 'descripción',
+              description: '',
               timeline: [
                 {
                   id: '_pedidos-ya',
                   company: 'PedidosYa',
                   tag: 'Último',
-                  date: 'Oct. 2021 - Today',
+                  date: 'Oct. 2021 - Actualidad',
                   position: 'Software Engineer Fullstack',
-                  description: 'Algunos datos que representan el impacto de mi trabajo:',
+                  description:
+                    'PedidosYa es una empresa de delivery de comidas (presente en todo Latinoamérica) donde el 100% de sus ganancias dependen exclusivamente de sus plataformas web y app móvil. Dentro de la compañía me encuentro desempeñando tareas como desarrollador web y backend dando servicios en las pantallas del checkout y formas de pago. Nuestro principal objetivo es mejorar la experiencia de pago del usuario, brindándole la mayor cantidad de formas posibles para abonar su pedido y de una forma segura. Algunos datos que representan el impacto de mi trabajo desde que estoy en la empresa:',
                   icon: 'CODE',
                   stats: [
                     {
@@ -423,8 +426,9 @@ i18n
               ],
             },
             myTechStack: {
-              title: 'Mis conocimiento tecnológico',
-              description: 'con las que he estado trabajando recientemente',
+              title: 'Mis conocimientos tecnológicos',
+              description:
+                'con los que llevé a cabo los distintos proyectos que se me fueron presentando',
             },
             tools: {
               title: 'Herramientas',
