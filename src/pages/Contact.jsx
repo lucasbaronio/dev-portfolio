@@ -7,6 +7,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useSendMessage } from '../services/mutations';
 import { useTranslation } from 'react-i18next';
+import Divider from '../components/Divider';
+import SendMeAnEmail from '../components/SendMeAnEmail';
 
 const INPUTS = [
   (t) => ({
@@ -183,13 +185,13 @@ button.addEventListener('click', () => {
 
   return (
     <section className="relative flex flex-col lg:flex-row h-full">
-      <div className="flex flex-1 items-center justify-center lg:w-1/2 lg:border-r border-r-bg-200">
+      <div className="flex flex-col flex-1 py-4 items-center justify-center lg:w-1/2 lg:border-r border-r-bg-200">
         <form
-          className="w-full py-4 px-4 mx-auto max-w-lg lg:py-8"
+          className="w-full py-2 px-4 mx-auto max-w-lg lg:py-8"
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-2xl text-primary-300 text-center my-6">{t('contact.title')}</h2>
-          <div className=" flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             {INPUTS.map((getInputProps) => {
               const {
                 fieldName,
@@ -218,7 +220,7 @@ button.addEventListener('click', () => {
             })}
           </div>
           <Button
-            className="my-8"
+            className="mt-8"
             type="submit"
             gradientDuoTone="greenToBlue"
             disabled={isLoading || isError}
@@ -228,6 +230,13 @@ button.addEventListener('click', () => {
             <span>{t('contact.inputs.submit.label')}</span>
           </Button>
         </form>
+        <Divider />
+        <div className="flex flex-col items-center py-2 lg:py-4 w-full">
+          <h3 className="text-xl text-primary-300 text-center my-6">
+            {t('contact.sendMeAnEmail.title')}
+          </h3>
+          <SendMeAnEmail />
+        </div>
       </div>
       <div className="flex lg:w-1/2 px-2 border-t lg:border-none border-t-bg-200">
         <div className="flex gap-6 w-full text-sm">

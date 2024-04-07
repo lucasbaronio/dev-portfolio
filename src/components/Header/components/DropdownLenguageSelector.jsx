@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Avatar } from 'flowbite-react';
 import { useTranslation } from 'react-i18next';
 
-var SPANISH_REGEX = /^es-[A-Z]{2}$/;
+var SPANISH_REGEX = /^es(-[A-Z]{2})?$/;
 
 const LANG = {
   SPANISH: 'es',
   ENGLISH: 'en',
 };
+
+const FALLBACK_LANG = LANG.SPANISH;
 
 const avatarTheme = {
   root: {
@@ -20,7 +22,7 @@ const avatarTheme = {
 
 const DropdownLenguageSelector = () => {
   const { i18n } = useTranslation();
-  const [currentLang, setCurrentLang] = useState(null);
+  const [currentLang, setCurrentLang] = useState();
 
   useEffect(() => {
     if (SPANISH_REGEX.test(i18n.language)) setCurrentLang(LANG.SPANISH);
@@ -42,7 +44,7 @@ const DropdownLenguageSelector = () => {
         type="button"
       >
         <Avatar
-          img={`/${currentLang}.png`}
+          img={`/${currentLang ?? FALLBACK_LANG}.png`}
           size="sm"
           rounded
           bordered
