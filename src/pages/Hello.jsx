@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Badge from '../components/Badge';
+import { Button } from 'flowbite-react';
+import Email from '../assets/email.svg';
 // import VerticalCarousel from '../components/VerticalCarousel';
 
 const Hello = () => {
@@ -24,6 +26,18 @@ const Hello = () => {
                 {t('hello.career')}
               </h2>
             </pre>
+            <div className="flex justify-start gap-4 my-8">
+              <Button gradientDuoTone="greenToBlue" size="sm">
+                <a href="/CV.pdf" download>
+                  <span>{t('hello.downloadButton')}</span>
+                </a>
+              </Button>
+              <Button gradientDuoTone="greenToBlue" size="sm">
+                <a href="mailto:lucas.baronio@gmail.com" download>
+                  <img src={Email} width={20} />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
         <div className=" flex basis-96 flex-1 items-center justify-center h-full w-full px-4">

@@ -23,6 +23,7 @@ i18n
             subtitle: 'Hi all. I am',
             career: 'Software Engineer Fullstack',
             badge: 'Working for PedidosYa',
+            downloadButton: 'Download CV',
           },
           about: {
             tab: '_about-me',
@@ -278,6 +279,11 @@ i18n
               success: 'Message sent successfully',
               error: 'An error occurred while sending the message',
             },
+            sendMeAnEmail: {
+              title: 'Send me an email',
+              copyButton: 'Copy',
+              copiedLabel: 'Copied',
+            },
           },
           footer: {
             branch: 'main',
@@ -295,6 +301,7 @@ i18n
             subtitle: 'Hola a todos. Soy',
             career: 'Ingeniero de Software Fullstack',
             badge: 'Trabajando para PedidosYa',
+            downloadButton: 'Descargar CV',
           },
           about: {
             tab: '_acerca-de-mi',
@@ -549,6 +556,11 @@ i18n
               success: 'Mensaje enviado correctamente',
               error: 'Ocurrió un error al enviar el mensaje',
             },
+            sendMeAnEmail: {
+              title: 'Envíame un correo',
+              copyButton: 'Copiar',
+              copiedLabel: 'Copiado',
+            },
           },
           footer: {
             branch: 'master',
@@ -560,7 +572,7 @@ i18n
       },
     },
 
-    debug: true,
+    debug: false,
     fallbackLng: 'es',
 
     interpolation: {
