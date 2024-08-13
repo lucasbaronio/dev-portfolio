@@ -16,7 +16,7 @@ export const Router = () => {
         <Route path={TABS.ABOUT} element={<About />} />
         <Route path={TABS.PROJECTS} element={<Projects />} />
         <Route path={TABS.CONTACT} element={<Contact />} />
-        <Route path="*" element={<span>Not Found</span>} />
+        <Route path="*" element={<></>} />
       </Route>
     </Routes>
   );

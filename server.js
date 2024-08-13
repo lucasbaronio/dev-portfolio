@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import fs from "fs";
+import path from "path";
 import express from "express";
-import { createServer as createViteServer } from "vite";
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -45,7 +45,7 @@ app.use('*', async (req, res) => {
     let render
     if (!isProduction) {
       // Always read fresh template in development
-      template = await fs.readFile('./index.html', 'utf-8')
+      template = fs.readFileSync(path.resolve("./index.html"), "utf-8");
       template = await vite.transformIndexHtml(url, template)
       render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render
     } else {
