@@ -24,9 +24,8 @@ const Box = () => {
 const Projects = () => {
   const { t, ready } = useTranslation();
   const [projects, setProjects] = useState([]);
-  const [githubContributions, setGithubContributions] = useState(
-    sessionStorage.getItem('githubContributions'),
-  );
+  const [githubContributions, setGithubContributions] = useState();
+  // window ? window.sessionStorage.getItem('githubContributions') : undefined,
 
   useScrollToSection();
 
@@ -39,7 +38,7 @@ const Projects = () => {
         const result = await response.json();
         console.log(result);
         setGithubContributions(result?.total?.lastYear);
-        window.sessionStorage.setItem('githubContributions', result?.total?.lastYear);
+        // window?.sessionStorage.setItem('githubContributions', result?.total?.lastYear);
       } catch (error) {
         console.error(error);
       }

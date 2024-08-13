@@ -17,24 +17,18 @@ function errorResponseHandler(error) {
     const url = error.config?.url;
     const status = error.response?.status;
 
-    if (status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('clinicName');
-      window.location.replace('/login');
-    }
-
     if (isNetworkError(error)) {
       console.error('Network errors');
     }
 
-    // const dataToLog = JSON.stringify({
-    //     status,
-    //     url,
-    //     message,
-    //     data,
-    // });
+    const dataToLog = JSON.stringify({
+      status,
+      url,
+      message,
+      data,
+    });
 
-    // console.error(`[AXIOS_ERROR_INTERCEPTOR] ${dataToLog}`);
+    console.error(`[AXIOS_ERROR_INTERCEPTOR] ${dataToLog}`);
 
     return Promise.reject(error);
   } catch {
@@ -51,10 +45,6 @@ export const initialize = (props) => {
   errorInterceptor(instance);
   return instance;
 };
-
-export const getHeaders = () => ({
-  Authorization: `Bearer ${localStorage.getItem('token')}`,
-});
 
 const getInstance = (props) => instance || initialize(props);
 
