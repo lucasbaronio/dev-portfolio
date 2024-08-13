@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import RootLayout from './RootLayout';
 import Hello from './pages/Hello';
@@ -11,7 +11,7 @@ export const Router = () => {
   return (
     <Routes>
       <Route element={<RootLayout />}>
-        <Route index element={<Hello />} />
+        <Route index element={<Navigate to={TABS.HELLO} replace />} />
         <Route path={TABS.HELLO} element={<Hello />} />
         <Route path={TABS.ABOUT} element={<About />} />
         <Route path={TABS.PROJECTS} element={<Projects />} />

@@ -3,6 +3,7 @@ import { GITHUB_CALENDAR_IMG } from '../../constants/images';
 import { useTranslation } from 'react-i18next';
 import Card from '../../components/Card';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
+// import { isServer } from '../../utils/isServer';
 
 const COLORS = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
 
@@ -25,7 +26,8 @@ const Projects = () => {
   const { t, ready } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [githubContributions, setGithubContributions] = useState();
-  // window ? window.sessionStorage.getItem('githubContributions') : undefined,
+  // !isServer() ? window.sessionStorage.getItem('githubContributions') : undefined,
+  // );
 
   useScrollToSection();
 

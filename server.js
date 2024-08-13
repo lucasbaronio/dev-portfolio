@@ -2,6 +2,10 @@
 import fs from "fs";
 import path from "path";
 import express from "express";
+import cookieParser from 'cookie-parser';
+
+import i18nextMiddleware from 'i18next-http-middleware';
+import i18next from './src/providers/i18next/i18nextSSR.js'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -18,6 +22,7 @@ const ssrManifest = isProduction
 
 // Create http server
 const app = express()
+app.use(cookieParser());
 
 // Add Vite or respective production middlewares
 let vite
@@ -36,9 +41,14 @@ if (!isProduction) {
   app.use(base, sirv('./dist/client', { extensions: [] }))
 }
 
+app.use(i18nextMiddleware.handle(i18next))
+
 // Serve HTML
 app.use('*', async (req, res) => {
   try {
+    const lng = req.cookies.lng || 'es'
+    req.i18n.changeLanguage(lng);
+
     const url = req.originalUrl.replace(base, '')
 
     let template
@@ -53,12 +63,14 @@ app.use('*', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render
     }
 
-    const rendered = await render({ path: req.originalUrl }, ssrManifest)
+    const rendered = await render({ path: req.originalUrl, i18n: req.i18n }, ssrManifest)
 
     const html = template
+      .replace(`<!--app-lang-->`, `<html lang="${lng}">`)
       .replace(`<!--app-head-->`, rendered.head ?? '')
       .replace(`<!--app-html-->`, rendered.html ?? '')
 
+    res.cookie('lng', lng);
     res.status(200).set({ 'Content-Type': 'text/html' }).send(html)
   } catch (e) {
     vite?.ssrFixStacktrace(e)
