@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:client": "vite",
-    "dev:server": "cross-env NODE_ENV=development node ./server.js",
+    "dev:server": "cross-env NODE_ENV=development node ./server/index.js",
     "build": "yarn build:client && yarn build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
@@ -19,6 +19,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "flowbite-react": "^0.5.0",
     "i18next": "^23.7.11",
     "i18next-browser-languagedetector": "^7.2.0",

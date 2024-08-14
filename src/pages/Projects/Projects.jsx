@@ -3,6 +3,7 @@ import { GITHUB_CALENDAR_IMG } from '../../constants/images';
 import { useTranslation } from 'react-i18next';
 import Card from '../../components/Card';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
+import { isServer } from '../../utils/isServer';
 // import { isServer } from '../../utils/isServer';
 
 const COLORS = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
@@ -32,20 +33,10 @@ const Projects = () => {
   useScrollToSection();
 
   useEffect(() => {
-    const fetchGithubData = async (username) => {
-      try {
-        const response = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
-        );
-        const result = await response.json();
-        console.log(result);
-        setGithubContributions(result?.total?.lastYear);
-        // window?.sessionStorage.setItem('githubContributions', result?.total?.lastYear);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    if (!githubContributions) fetchGithubData('lbaronio');
+    if (!githubContributions && !isServer()) {
+      const { githubContributions } = window.__SESSION_DATA__;
+      setGithubContributions(githubContributions);
+    }
   }, []);
 
   useEffect(() => {

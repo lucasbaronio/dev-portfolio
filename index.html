@@ -1,5 +1,5 @@
 <!doctype html>
-<!--app-lang-->
+<html lang="HTML_LNG">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/lb-logo-bg.svg" />
@@ -40,6 +40,9 @@
   </head>
   <body>
     <div id="root"><!--app-html--></div>
+    <script>
+      window.__SESSION_DATA__ = APP_SESSION_DATA;
+    </script>
     <script type="module" src="/src/entry-client.jsx"></script>
   </body>
 </html>
