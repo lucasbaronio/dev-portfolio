@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import Card from '../../components/Card';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
 import { isServer } from '../../utils/isServer';
-// import { isServer } from '../../utils/isServer';
 
 const COLORS = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
 
@@ -27,8 +26,6 @@ const Projects = () => {
   const { t, ready } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [githubContributions, setGithubContributions] = useState();
-  // !isServer() ? window.sessionStorage.getItem('githubContributions') : undefined,
-  // );
 
   useScrollToSection();
 

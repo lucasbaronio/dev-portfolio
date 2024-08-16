@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import Root from './Root.jsx';
+import Root from './Root';
 import { I18nextProvider } from 'react-i18next';
 import { StaticRouter } from 'react-router-dom/server';
 import { Router } from './router';

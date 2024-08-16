@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Outlet, useMatch, useNavigate } from 'react-router-dom';
 import SideBar from './components/SideBar';
 import Header from './components/Header';
-import { useEffect, useState } from 'react';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { useTranslation } from 'react-i18next';
 import { TABS } from './constants/tabs';
