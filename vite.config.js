@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   ssr: {
-    noExternal: ['react-syntax-highlighter', 'react-router-dom'],
+    noExternal: ['react-syntax-highlighter', 'react-router-dom', 'react-icons'],
   },
 });

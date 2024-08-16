@@ -16,9 +16,9 @@ const base = process.env.BASE || '/';
 
 (async () => {
   // Cached production assets
-  const templateHtml = isProduction ? fs.readFile('./dist/client/index.html', 'utf-8') : '';
+  const templateHtml = isProduction ? fs.readFileSync('./dist/client/index.html', 'utf-8') : '';
   const ssrManifest = isProduction
-    ? fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8')
+    ? fs.readFileSync('./dist/client/ssr-manifest.json', 'utf-8')
     : undefined;
 
   // Create http server
