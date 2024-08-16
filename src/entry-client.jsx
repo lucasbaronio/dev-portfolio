@@ -4,7 +4,7 @@ import Root from './Root';
 import i18n from './providers/i18next/i18nextSSR.js';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
-import { Router } from './router';
+// import { Router } from './router';
 
 const lng = document.documentElement.lang || 'es';
 
@@ -16,7 +16,8 @@ ReactDOM.hydrateRoot(
     <Root>
       <I18nextProvider i18n={i18n}>
         <BrowserRouter>
-          <Router />
+          {/* <Router /> */}
+          <div>Holaaa</div>
         </BrowserRouter>
       </I18nextProvider>
     </Root>
