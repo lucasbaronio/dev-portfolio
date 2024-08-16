@@ -14,6 +14,5 @@
       "src": "/(.*)",
       "dest": "/server/index.js"
     }
-  ],
-  "files": ["dist/client/**", "node_modules/vite/dist/client/client.mjs"]
+  ]
 }
