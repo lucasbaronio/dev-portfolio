@@ -1,4 +1,4 @@
-import parseAxiosError from '../../src/services/utils/parseAxiosError';
+import parseAxiosError from '../utils/parseAxiosError.js';
 
 export const getGithubContributions = async (username) => {
   try {
