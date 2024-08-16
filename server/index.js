@@ -1,13 +1,17 @@
 /* eslint-disable no-undef */
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import express from 'express';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
+import { createServer as createViteServer } from 'vite';
 
 import i18nextMiddleware from 'i18next-http-middleware';
 import i18next from '../src/providers/i18next/i18nextSSR.js';
 import { getGithubContributions } from './services/getGithubContributions.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production';
@@ -16,9 +20,8 @@ const base = process.env.BASE || '/';
 
 (async () => {
   // Cached production assets
-  const templateHtml = isProduction ? fs.readFileSync('./dist/client/index.html', 'utf-8') : '';
   const ssrManifest = isProduction
-    ? fs.readFileSync('./dist/client/ssr-manifest.json', 'utf-8')
+    ? fs.readFileSync(path.resolve(__dirname, 'ssr-manifest.json'), 'utf-8')
     : undefined;
 
   // Create http server
@@ -30,15 +33,14 @@ const base = process.env.BASE || '/';
       secret: process.env.EXPRESS_SESSION_KEY || 'default',
       resave: false,
       saveUninitialized: true,
-      cookie: { secure: isProduction }, // 'secure: true' en producción si usas HTTPS
+      cookie: { secure: isProduction },
     }),
   );
 
   // Add Vite or respective production middlewares
   let vite;
   if (!isProduction) {
-    const { createServer } = await import('vite');
-    vite = await createServer({
+    vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'custom',
       base,
@@ -70,12 +72,20 @@ const base = process.env.BASE || '/';
       let template;
       let render;
       if (!isProduction) {
-        // Always read fresh template in development
+        // 1. Read index.html
         template = fs.readFileSync(path.resolve('./index.html'), 'utf-8');
+
+        // 2. Apply Vite HTML transforms. This injects the Vite HMR client,
+        //    and also applies HTML transforms from Vite plugins, e.g. global
+        //    preambles from @vitejs/plugin-react
         template = await vite.transformIndexHtml(url, template);
+
+        // 3. Load the server entry. ssrLoadModule automatically transforms
+        //    ESM source code to be usable in Node.js! There is no bundling
+        //    required, and provides efficient invalidation similar to HMR.
         render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render;
       } else {
-        template = templateHtml;
+        template = '';
         render = (await import('../dist/server/entry-server.js')).render;
       }
 
