@@ -21,7 +21,7 @@ const base = process.env.BASE || '/';
 (async () => {
   // Cached production assets
   const ssrManifest = isProduction
-    ? fs.readFileSync(path.resolve(__dirname, 'ssr-manifest.json'), 'utf-8')
+    ? fs.readFileSync(path.resolve(__dirname, 'dist/client/.vite/ssr-manifest.json'), 'utf-8')
     : undefined;
 
   // Create http server
@@ -86,7 +86,7 @@ const base = process.env.BASE || '/';
         //    required, and provides efficient invalidation similar to HMR.
         render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render;
       } else {
-        template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        template = fs.readFileSync(path.resolve(__dirname, 'dist/client/index.html'), 'utf-8');
         render = (await import('../dist/server/entry-server.js')).render;
       }
 
