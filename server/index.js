@@ -86,7 +86,7 @@ const base = process.env.BASE || '/';
         //    required, and provides efficient invalidation similar to HMR.
         render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render;
       } else {
-        template = '';
+        template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
         render = (await import('../dist/server/entry-server.js')).render;
       }
 
