@@ -18,7 +18,7 @@ const base = process.env.BASE || '/';
 (async () => {
   // Cached production assets
   const ssrManifest = isProduction
-    ? fs.readFileSync('./dist/client/.vite/ssr-manifest.json', 'utf-8')
+    ? fs.readFileSync('./dist/client/ssr-manifest.json', 'utf-8')
     : undefined;
 
   // Create http server
