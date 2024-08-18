@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import express from 'express';
 import session from 'express-session';
@@ -11,8 +10,6 @@ import i18nextMiddleware from 'i18next-http-middleware';
 import i18next from '../src/providers/i18next/i18nextSSR.js';
 import { getGithubContributions } from './services/getGithubContributions.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 // Constants
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 5173;
@@ -21,7 +18,7 @@ const base = process.env.BASE || '/';
 (async () => {
   // Cached production assets
   const ssrManifest = isProduction
-    ? fs.readFileSync(path.resolve(__dirname, 'dist/client/.vite/ssr-manifest.json'), 'utf-8')
+    ? fs.readFileSync('./dist/client/.vite/ssr-manifest.json', 'utf-8')
     : undefined;
 
   // Create http server
@@ -86,7 +83,7 @@ const base = process.env.BASE || '/';
         //    required, and provides efficient invalidation similar to HMR.
         render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render;
       } else {
-        template = fs.readFileSync(path.resolve(__dirname, 'dist/client/index.html'), 'utf-8');
+        template = fs.readFileSync('./dist/client/index.html', 'utf-8');
         render = (await import('../dist/server/entry-server.js')).render;
       }
 
