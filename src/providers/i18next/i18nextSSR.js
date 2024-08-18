@@ -227,6 +227,7 @@ i18next
                   imageURL: 'https://github.com/lucasbaronio/fletes-app',
                 },
                 {
+                  // Mas info de Pimbay: https://rad.ort.edu.uy/items/06e84380-2b8c-4a3d-92e3-3fe6489603f9
                   id: '_pimbay',
                   title: 'Pimbay',
                   subtitle: 'What are you up to do today?',
@@ -504,6 +505,7 @@ i18next
                   imageURL: 'https://github.com/lucasbaronio/fletes-app',
                 },
                 {
+                  // Mas info de Pimbay: https://rad.ort.edu.uy/items/06e84380-2b8c-4a3d-92e3-3fe6489603f9
                   id: '_pimbay',
                   title: 'Pimbay',
                   subtitle: '¿Qué estás para hacer hoy?',
