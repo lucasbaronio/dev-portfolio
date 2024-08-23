@@ -365,7 +365,7 @@ i18next
                   date: 'Feb. 2021 - Jul. 2021',
                   position: 'Desarrollador React Native',
                   description:
-                    'Como freelance, tuve la oportunidad de colaborar con un colega en un proyecto para un cliente específico, desarrollando una aplicación móvil que conectara a transportistas con usuarios que necesitaran de sus servicios. La App se implementó utilizando React Native como lenguaje a nivel cliente y Golang en el backend.',
+                    'Como freelance, tuve la oportunidad de colaborar con un colega en un proyecto para un cliente específico, desarrollando una aplicación móvil que conectará a transportistas con usuarios que necesitaran de sus servicios. La App se implementó utilizando React Native como lenguaje a nivel cliente y Golang en el backend.',
                   icon: 'TRUCK',
                 },
                 {

@@ -6,7 +6,8 @@ import Email from '../assets/email.svg';
 // import VerticalCarousel from '../components/VerticalCarousel';
 
 const Hello = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  console.log(i18n.language);
 
   return (
     <div className="flex h-full w-full">
@@ -28,7 +29,7 @@ const Hello = () => {
             </pre>
             <div className="flex justify-start gap-4 my-8">
               <Button gradientDuoTone="greenToBlue" size="sm">
-                <a href="/CV.pdf" download>
+                <a href={`Lucas_Baronio-CV-${i18n.language}.pdf`} download>
                   <span>{t('hello.downloadButton')}</span>
                 </a>
               </Button>
