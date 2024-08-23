@@ -7,7 +7,6 @@ import Email from '../assets/email.svg';
 
 const Hello = () => {
   const { t, i18n } = useTranslation();
-  console.log(i18n.language);
 
   return (
     <div className="flex h-full w-full">
