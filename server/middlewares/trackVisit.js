@@ -9,13 +9,7 @@ const trackVisit = async (req, res, next) => {
     const isNotFirstVisit = req.session[IS_NOT_FIRST_VISIT];
 
     if (!isNotFirstVisit && !isLocal) {
-      const clientIp =
-        req.ip || req.headers['x-forwarded-for']?.split(',')[0] || req.connection.remoteAddress;
-      console.log(
-        `ip: ${req.ip} - x-forwarded-for: ${
-          req.headers['x-forwarded-for']?.split(',')[0]
-        } - remoteAddress: ${req.connection.remoteAddress}`,
-      );
+      const clientIp = req.ip || req.headers['x-forwarded-for']?.split(',')[0];
       const ipInfo = await getIpInfo(clientIp);
       if (!ipInfo) throw new Error();
 
