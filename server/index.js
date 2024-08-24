@@ -8,7 +8,9 @@ import { createServer as createViteServer } from 'vite';
 
 import i18nextMiddleware from 'i18next-http-middleware';
 import i18next from '../src/providers/i18next/i18nextSSR.js';
-import { getGithubContributions } from './services/getGithubContributions.js';
+import trackVisit from './middlewares/trackVisit.js';
+import githubContributions from './middlewares/githubContributions.js';
+import { GITHUB_CONTRIBUTIONS } from './utils/session/constants.js';
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production';
@@ -33,6 +35,13 @@ const base = process.env.BASE || '/';
       cookie: { secure: isProduction },
     }),
   );
+  app.use([trackVisit, githubContributions]);
+
+  // To show express-session data
+  // app.use(function (req, res, next) {
+  //   console.log(req.session);
+  //   next();
+  // });
 
   // Add Vite or respective production middlewares
   let vite;
@@ -58,10 +67,8 @@ const base = process.env.BASE || '/';
       const lng = req.cookies.lng || 'es';
       req.i18n.changeLanguage(lng);
 
-      const githubContributions = await getGithubContributions('lbaronio');
       const sessionData = {
-        ...req.session.data,
-        githubContributions,
+        githubContributions: req.session[GITHUB_CONTRIBUTIONS],
       };
 
       const url = req.originalUrl.replace(base, '');
