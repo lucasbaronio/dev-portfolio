@@ -36,6 +36,7 @@ const base = process.env.BASE || '/';
     }),
   );
   app.use([trackVisit, githubContributions]);
+  app.set('trust proxy', true);
 
   // To show express-session data
   // app.use(function (req, res, next) {
