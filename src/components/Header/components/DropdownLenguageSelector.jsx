@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Avatar } from 'flowbite-react';
 import { useTranslation } from 'react-i18next';
+import { isServer } from '../../../utils/isServer';
 
 var SPANISH_REGEX = /^es(-[A-Z]{2})?$/;
 
@@ -31,10 +32,18 @@ const DropdownLenguageSelector = () => {
 
   const setSpanishLang = () => {
     i18n.changeLanguage(LANG.SPANISH);
+    if (!isServer()) {
+      document.cookie = `lng=${LANG.SPANISH}; path=/`;
+      window.location.reload();
+    }
   };
 
   const setEnglishLang = () => {
     i18n.changeLanguage(LANG.ENGLISH);
+    if (!isServer()) {
+      document.cookie = `lng=${LANG.ENGLISH}; path=/`;
+      window.location.reload();
+    }
   };
 
   return (
