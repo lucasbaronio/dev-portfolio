@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useMatches } from 'react-router-dom';
 import { TABS } from '../constants/tabs';
+import { useLocation } from 'react-router-dom';
 
 export const useTabSelected = () => {
-  const matches = useMatches();
+  const location = useLocation();
   const [tabSelected, setTabSelected] = useState(TABS.HELLO);
 
   useEffect(() => {
-    setTabSelected(matches[1]?.handle?.name);
-  }, [matches]);
+    const tab = location.pathname.slice(1);
+    setTabSelected(tab);
+  }, [location.pathname]);
 
   return tabSelected;
 };
