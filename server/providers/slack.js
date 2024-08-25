@@ -1,4 +1,7 @@
-export const buildTrackVisitBlocksMsg = (title, { ip, city, country, timezone, loc }) => {
+export const buildTrackVisitBlocksMsg = (
+  title,
+  { ip, city, country, timezone, loc, userAgent, referer, language },
+) => {
   return [
     {
       type: 'header',
@@ -25,6 +28,18 @@ export const buildTrackVisitBlocksMsg = (title, { ip, city, country, timezone, l
         {
           type: 'mrkdwn',
           text: `*Location:*\n${loc}`,
+        },
+        {
+          type: 'mrkdwn',
+          text: `*Referer:*\n${referer}`,
+        },
+        {
+          type: 'mrkdwn',
+          text: `*Lenguaje:*\n${language}`,
+        },
+        {
+          type: 'mrkdwn',
+          text: `*UserAgent:*\n${userAgent}`,
         },
       ],
     },

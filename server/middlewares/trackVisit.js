@@ -14,8 +14,16 @@ const trackVisit = async (req, res, next) => {
       const ipInfo = await getIpInfo(clientIp);
       if (!ipInfo) throw new Error();
 
+      const referer = req.headers['referer'] || req.headers['referrer'];
+      const language = req.headers['accept-language'];
+
       const titleMessage = 'Nueva visita en DevPortfolio!';
-      const buildBlocks = buildTrackVisitBlocksMsg(titleMessage, { ...ipInfo });
+      const buildBlocks = buildTrackVisitBlocksMsg(titleMessage, {
+        ...ipInfo,
+        userAgent,
+        referer,
+        language,
+      });
       const message = buildMessage(titleMessage, buildBlocks);
 
       await sendMessage(message);
