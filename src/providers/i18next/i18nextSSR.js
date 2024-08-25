@@ -227,7 +227,6 @@ i18next
                   imageURL: 'https://github.com/lucasbaronio/fletes-app',
                 },
                 {
-                  // Mas info de Pimbay: https://rad.ort.edu.uy/items/06e84380-2b8c-4a3d-92e3-3fe6489603f9
                   id: '_pimbay',
                   title: 'Pimbay',
                   subtitle: 'What are you up to do today?',
@@ -235,7 +234,7 @@ i18next
                     'Application implemented with React Native as a final year project with the focus on planning activities to do with other known and/or unknown people.',
                   desktopImg: 'PIMBAY_DESKTOP',
                   mobileImg: 'PIMBAY_MOBILE',
-                  externalURL: '',
+                  externalURL: 'https://rad.ort.edu.uy/items/06e84380-2b8c-4a3d-92e3-3fe6489603f9',
                   imageURL: 'https://github.com/lucasbaronio/pimbayMobile',
                 },
               ],
@@ -505,7 +504,6 @@ i18next
                   imageURL: 'https://github.com/lucasbaronio/fletes-app',
                 },
                 {
-                  // Mas info de Pimbay: https://rad.ort.edu.uy/items/06e84380-2b8c-4a3d-92e3-3fe6489603f9
                   id: '_pimbay',
                   title: 'Pimbay',
                   subtitle: '¿Qué estás para hacer hoy?',
@@ -513,7 +511,7 @@ i18next
                     'Aplicación implementada con React Native como proyecto de fin de carrera con el foco en la planificación de actividades para hacer con otras personas conocidas y/o desconocidas.',
                   desktopImg: 'PIMBAY_DESKTOP',
                   mobileImg: 'PIMBAY_MOBILE',
-                  externalURL: '',
+                  externalURL: 'https://rad.ort.edu.uy/items/06e84380-2b8c-4a3d-92e3-3fe6489603f9',
                   imageURL: 'https://github.com/lucasbaronio/pimbayMobile',
                 },
               ],
