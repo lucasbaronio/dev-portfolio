@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { IMAGE_COMPONENT_MAPPER } from '../constants/images';
+import ExternalLinkIcon from '../assets/externalLink.svg';
 
 const Link = ({ url, children }) => {
   if (url)
@@ -46,7 +47,6 @@ const Card = ({
             />
           </figure>
         ) : null}
-        {/* <IconExternalLink className="absolute top-5 right-5 group-hover:scale-125 duration-100 text-text-100" /> */}
       </Link>
       <div
         className={`min-w-full h-[70%] hover:bg-bg-700/60 bg-bg-700 dark:bg-bg-300 hover:dark:bg-bg-300/60 hover:backdrop-blur-lg md:absolute md:top-[66%] md:hover:top-[30%] pl-2 ${
@@ -61,6 +61,16 @@ const Card = ({
             <p className="text-sm line-clamp-2 text-accent-200 font-semibold">{subtitle}</p>
           ) : null}
           <p className="line-clamp-10 text-xs mt-4">{description}</p>
+          {externalURL ? (
+            <a
+              href={externalURL}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute top-2 right-2 hover:scale-125 duration-100"
+            >
+              <img src={ExternalLinkIcon} width={25} />
+            </a>
+          ) : null}
         </hgroup>
       </div>
     </div>
