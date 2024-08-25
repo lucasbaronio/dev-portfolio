@@ -7,8 +7,9 @@ const trackVisit = async (req, res, next) => {
   try {
     const isLocal = process.env.NODE_ENV === 'development';
     const isNotFirstVisit = req.session[IS_NOT_FIRST_VISIT];
+    const userAgent = req.headers['user-agent'];
 
-    if (!isNotFirstVisit && !isLocal) {
+    if (!isNotFirstVisit && !isLocal && !userAgent.startsWith('curl')) {
       const clientIp = req.ip || req.headers['x-forwarded-for']?.split(',')[0];
       const ipInfo = await getIpInfo(clientIp);
       if (!ipInfo) throw new Error();
