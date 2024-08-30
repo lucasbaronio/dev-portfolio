@@ -7,8 +7,8 @@
     "dev:client": "vite",
     "dev:server": "cross-env NODE_ENV=development node --env-file .env.local ./server/index.js",
     "build": "yarn build:client && yarn build:server",
-    "build:client": "vite build --outDir dist/client --ssrManifest",
-    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr src/entry-server.js",
     "start": "cross-env NODE_ENV=production node ./server/index.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
