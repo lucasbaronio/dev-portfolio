@@ -7,10 +7,10 @@ import cookieParser from 'cookie-parser';
 import { createServer as createViteServer } from 'vite';
 
 import i18nextMiddleware from 'i18next-http-middleware';
-import i18next from '../src/providers/i18next/i18nextSSR.js';
-import trackVisit from './middlewares/trackVisit.js';
-import githubContributions from './middlewares/githubContributions.js';
-import { GITHUB_CONTRIBUTIONS } from './utils/session/constants.js';
+import i18next from './src/providers/i18next/i18nextSSR.js';
+import trackVisit from './src/server/middlewares/trackVisit.js';
+import githubContributions from './src/server/middlewares/githubContributions.js';
+import { GITHUB_CONTRIBUTIONS } from './src/server/utils/session/constants.js';
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production';
@@ -91,7 +91,7 @@ const base = process.env.BASE || '/';
         render = (await vite.ssrLoadModule('/src/entry-server.jsx')).render;
       } else {
         template = fs.readFileSync('./dist/client/index.html', 'utf-8');
-        render = (await import('../dist/server/entry-server.js')).render;
+        render = (await import('./dist/server/entry-server.js')).render;
       }
 
       const rendered = await render({ path: req.originalUrl, i18n: req.i18n }, ssrManifest);
