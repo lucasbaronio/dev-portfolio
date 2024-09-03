@@ -1,9 +1,7 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server/index.js"
-    }
-  ]
+  "buildCommand": "yarn build",
+  "devCommand": "yarn start",
+  "framework": null,
+  "outputDirectory": "dist/client",
+  "installCommand": "yarn"
 }
