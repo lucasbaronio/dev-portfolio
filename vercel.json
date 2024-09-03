@@ -2,7 +2,7 @@
   "buildCommand": "yarn build",
   "devCommand": "yarn start",
   "framework": null,
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/client",
   "installCommand": "yarn",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
