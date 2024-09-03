@@ -3,5 +3,6 @@
   "devCommand": "yarn start",
   "framework": null,
   "outputDirectory": "dist/server",
-  "installCommand": "yarn"
+  "installCommand": "yarn",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
