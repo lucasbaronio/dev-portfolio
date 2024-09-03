@@ -39,4 +39,4 @@ jobs:
         with:
           project: "dev-portfolio"
           entrypoint: "server/index.js"
-          root: "./"
+          root: ""
