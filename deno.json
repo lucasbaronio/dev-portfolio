@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "i18next-http-middleware": "npm:i18next-http-middleware@^3.6.0",
+    "vite": "npm:vite@^4.4.5"
+  }
+}

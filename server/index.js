@@ -6,8 +6,8 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { createServer as createViteServer } from 'vite';
 
-// import i18nextMiddleware from 'i18next-http-middleware';
-// import i18next from '../src/providers/i18next/i18nextSSR.js';
+import i18nextMiddleware from 'i18next-http-middleware';
+import i18next from '../src/providers/i18next/i18nextSSR.js';
 import trackVisit from './middlewares/trackVisit.js';
 import githubContributions from './middlewares/githubContributions.js';
 import { GITHUB_CONTRIBUTIONS } from './utils/session/constants.js';
@@ -60,7 +60,7 @@ const base = process.env.BASE || '/';
     app.use(base, sirv('./dist/client', { extensions: [] }));
   }
 
-  // app.use(i18nextMiddleware.handle(i18next));
+  app.use(i18nextMiddleware.handle(i18next));
 
   // Serve HTML
   app.use('*', async (req, res) => {
